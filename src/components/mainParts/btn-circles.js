@@ -9,7 +9,7 @@ class CircleButtons extends Component {
     render() {
         return (
             <div>
-                <button className="smallCircleButton">
+                <button className="smallCircleLeftButton">
                     <img src={arrow} alt="yellow circular arrow"/>
                 </button>    
                 <button className="largeCircleButton">
@@ -18,7 +18,7 @@ class CircleButtons extends Component {
                 <button className="largeCircleButton">
                     <img src={heart} alt="green heart"/>
                 </button>
-                <button className="smallCircleButton">
+                <button className="smallCircleRightButton">
                     <img src={marker} alt="blue map marker"/>
                 </button>
             </div>
