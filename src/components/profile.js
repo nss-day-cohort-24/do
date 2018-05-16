@@ -1,0 +1,1 @@
+//includes the internal, subcomponents for sign out, delete button, and profile name 
