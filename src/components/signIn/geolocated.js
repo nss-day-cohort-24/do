@@ -8,22 +8,27 @@ class Demo extends React.Component {
         super(props);
         this.state = {
             lat:'',
-            long: ''
+            long: '',
+            time:false
         }
     }
 
 
 
     componentDidMount = () => {
-        setTimeout(() => {
-            this.setState({
-                lat: this.props.coords.latitude,
-                long: this.props.coords.longitude
-            });
-            console.log('you are here: ', this.state.lat, this.state.long);
-            
+        if(this.props.isGeolocationEnabled) {
+            setTimeout(() => {
+                this.setState({
+                    lat: this.props.coords.latitude,
+                    long: this.props.coords.longitude,
+                    time: true
 
-        }, 4500);
+                });
+                console.log('you are here: ', this.state.lat, this.state.long);
+                
+
+            }, 4000);
+        }   
     }
 
     render() {
@@ -31,12 +36,12 @@ class Demo extends React.Component {
         ? <div>Your browser does not support Geolocation</div>
         : !this.props.isGeolocationEnabled
             ? <div>Geolocation is not enabled</div>
-            : this.state.lat
+            : this.state.time
             ? 
                 <Radius 
                 lat={this.state.lat}
                 long={this.state.long} />
-            : <div>Hang on, im looking for you&hellip; </div>
+            :<div></div>
     }
 }
  
