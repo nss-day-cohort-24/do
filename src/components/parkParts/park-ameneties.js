@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 /**
-     * Park Address
+     * Park Ameneties
  */
 
- export function ParkAddress({address}) {
+ export function ParkAmeneties({amenities}) {
 
 
     const styles={
@@ -18,7 +18,13 @@ import ReactDOM from 'react-dom';
     return (
 
         <div>
-            <h3 className="address" style={styles}>{address}</h3>
+            <ul style={styles}>
+            
+                <li>first</li>
+                <li>second</li>
+                <li>third</li>
+            
+            </ul>
         </div>
     )
 }
