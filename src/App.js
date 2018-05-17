@@ -3,6 +3,7 @@ import './App.css';
 import Signin from './components/signIn/signIn';
 import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 var name = "Potters Field";
