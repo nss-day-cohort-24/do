@@ -1,27 +1,8 @@
 import React, { Component } from 'react';
+import CardStack from '../cardstack'; 
 
 
-var name = "Potters Field";
-//test string for querying database
-var query = `?$where=park_name="${name}"`
 
-var parksAPI = 
-{
-  link:`https://data.nashville.gov/resource/xbru-cfzi.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-  type: 'parks'
-}
-
-var historyAPI = 
-{
-  link:`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-  type: 'history'
-};
-
-var artAPI = 
-{
-  link: `https://data.nashville.gov/resource/xakp-ess3.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-  type: 'art'
-};
 
 class NashvilleOpenData extends Component {
 
@@ -54,52 +35,25 @@ class NashvilleOpenData extends Component {
 
   //print parks
   if(this.state.dataLoaded && this.state.dataType === 'parks'){
+  var dataStuff = this.state.data;
   console.log("this.state.dataType in render" ,this.state.dataType);
-      var somedata= this.state.data.map((item,index) =>{
-      return (
-        <div id={item.park_name} key={index}>
-          {item.park_name}<br></br>
-          {item.mapped_location_address}
-        </div>
-      )
-  });
-
+      return (<CardStack name={dataStuff[0].park_name} type={this.state.dataType} />)
 
   //print art
   }else if(this.state.dataLoaded && this.state.dataType === 'art'){
-        var somedata =this.state.data.map((item,index) =>{
-        console.log(item.park_name.replace(/\s/g, '').toLowerCase());
-        return (
-          <div id={item.park_name} key={index}>
-            {item.park_name}<br></br>
-            {item.mapped_location_address}
-          </div>
-        )
-    });
-
-
+    var dataStuff = this.state.data;
+    console.log("this.state.dataType in render" ,this.state.dataType);
+        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} />)
 
   //print history
   }else if(this.state.dataLoaded && this.state.dataType === 'history'){
-    var somedata = this.state.data.map((item,index) =>{
-        console.log(item.title);
-        return (
-          <div id={item.title} key={index}>
-            {item.title}<br></br>
-            {item.mapped_location_address}
-          </div>
-        )
-    });
-
+    var dataStuff = this.state.data;
+    console.log("this.state.dataType in render" ,this.state.dataType);
+        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} />)
+  }else if (!this.state.dataLoaded){
     return(
     <div>
-    {somedata}
-    </div>
-    )
-  }else if(!this.state.dataLoaded){
-    return(
-    <div>
-      Loading.....
+      Loading....
     </div>
     )
   }

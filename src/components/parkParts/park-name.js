@@ -10,7 +10,7 @@ import './park-parts.css';
 function ParkName({name}){
     return (
         <div>
-            <h3 className="name">Shelby Bottoms</h3>
+            <h3 className="name">{this.props.name}</h3>
         </div>
     )
 }
