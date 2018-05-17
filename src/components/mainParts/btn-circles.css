@@ -30,3 +30,9 @@
     left: 10px;
 }
 
+.buttonContainer {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+

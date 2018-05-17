@@ -8,7 +8,7 @@ import './btn-circles.css';
 class CircleButtons extends Component {
     render() {
         return (
-            <div>
+            <div className="buttonContainer">
                 <button className="smallCircleLeftButton">
                     <img src={arrow} alt="yellow circular arrow"/>
                 </button>    
