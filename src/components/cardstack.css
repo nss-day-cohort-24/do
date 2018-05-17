@@ -1,7 +1,6 @@
 .parkpic {
-    height: 250px;
-    width: 350px;
-    padding: 15px;
+    height: 300px;
+    width: 380px;
     border-top-left-radius: 15%;
     border-top-right-radius: 15%;
 }
@@ -10,6 +9,5 @@
     border: 1px solid #f1f1f1;
     border-radius: 15%;
     height: 425px;
-    margin: 10px;
-
+    margin: 16px;
 }
