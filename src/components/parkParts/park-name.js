@@ -6,8 +6,8 @@ import './park-parts.css';
      * Park Name
  */
 
+function ParkName({name}){
 
-<<<<<<< HEAD
     const styles = {
         color: "#6BD628",
         fontFamily: "raleway, sans-serif",
@@ -22,14 +22,13 @@ import './park-parts.css';
     )
     
 }
-=======
-function ParkName({name}){
-    return (
-        <div>
-            <h3 className="name">Shelby Bottoms</h3>
-        </div>
-    )
-}
+
+
+//     return (
+//         <div>
+//             <h3 className="name">Shelby Bottoms</h3>
+//         </div>
+//     )
+// }
 
 export default ParkName
->>>>>>> master
