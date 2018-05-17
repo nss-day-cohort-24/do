@@ -3,6 +3,7 @@ import './App.css';
 import Signin from './components/signIn/signIn';
 import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
+import Geolocated from './components/signIn/geolocated';
 
 
 var name = "Potters Field";
@@ -84,6 +85,7 @@ class App extends Component {
       <div>
         {/* <Signin /> */}
         {/* <Cardstack /> */}
+        <Geolocated />
         <NashvilleOpenData url={this.state.whichAPI} dataType={this.state.type} />
       </div>
     )
