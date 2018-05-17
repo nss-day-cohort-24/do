@@ -34,6 +34,8 @@ import { googleProvider, rebase }  from './base.js';
           .update({
             email: user.email,
             uid: user.uid,
+            name: user.displayName,
+            portrait:user.photoURL
           })
           .then(() => {
             return user;
