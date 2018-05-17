@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-//test string for querying database
+
 var name = "Potters Field";
 //test string for querying database
 var query = `?$where=park_name="${name}"`
