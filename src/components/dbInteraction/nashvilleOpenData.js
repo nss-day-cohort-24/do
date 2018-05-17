@@ -3,21 +3,23 @@ import React, { Component } from 'react';
 //test string for querying database
 var name = "Potters Field";
 //test string for querying database
-var query = `?$where=park_name="${name}`
+var query = `?$where=park_name="${name}"`
 
 var parksAPI = 
 {
-  link:'https://data.nashville.gov/resource/xbru-cfzi.json',
+  link:`https://data.nashville.gov/resource/xbru-cfzi.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
   type: 'parks'
 }
+
 var historyAPI = 
 {
-  link:'https://data.nashville.gov/resource/m4hn-ihe4.json',
+  link:`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
   type: 'history'
 };
+
 var artAPI = 
 {
-  link: 'https://data.nashville.gov/resource/xakp-ess3.json',
+  link: `https://data.nashville.gov/resource/xakp-ess3.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
   type: 'art'
 };
 
@@ -36,7 +38,7 @@ class NashvilleOpenData extends Component {
   getThatAPI(url, type,name){
     console.log("getThatAPI url", url+name);
     console.log("getThatAPI type", type);
-    fetch(url+name)
+    fetch(url)
     .then(data => data.json())
     .then((data) => {
       console.log(data);
@@ -50,34 +52,51 @@ class NashvilleOpenData extends Component {
   
   render() {
 
-  // if type "park" print 
+  //print parks
   if(this.state.dataLoaded && this.state.dataType === 'parks'){
   console.log("this.state.dataType in render" ,this.state.dataType);
-  var somedata = this.state.data.map((item,index) =>{
-    // inside here will go the POI objects which we will pass props to.
+      var somedata= this.state.data.map((item,index) =>{
       return (
-        <div key={index}>
+        <div id={item.park_name} key={index}>
           {item.park_name}<br></br>
           {item.mapped_location_address}
         </div>
       )
   });
-  }else if(this.state.dataLoaded && this.state.dataType === 'art'){
-   // inside here will go the POI objects which we will pass props to.
-    return (<div>art data</div>)
-  }else if(this.state.dataLoaded && this.state.dataType === 'history'){
-    return(<div>history data </div>)
-  }
 
-  if(this.state.dataLoaded){
-    console.log(somedata);
-    return (
-      <div>
-        {somedata}
-      </div>
-    );
-  }
-  else if(!this.state.dataLoaded){
+
+  //print art
+  }else if(this.state.dataLoaded && this.state.dataType === 'art'){
+        var somedata =this.state.data.map((item,index) =>{
+        console.log(item.park_name.replace(/\s/g, '').toLowerCase());
+        return (
+          <div id={item.park_name} key={index}>
+            {item.park_name}<br></br>
+            {item.mapped_location_address}
+          </div>
+        )
+    });
+
+
+
+  //print history
+  }else if(this.state.dataLoaded && this.state.dataType === 'history'){
+    var somedata = this.state.data.map((item,index) =>{
+        console.log(item.title);
+        return (
+          <div id={item.title} key={index}>
+            {item.title}<br></br>
+            {item.mapped_location_address}
+          </div>
+        )
+    });
+
+    return(
+    <div>
+    {somedata}
+    </div>
+    )
+  }else if(!this.state.dataLoaded){
     return(
     <div>
       Loading.....
