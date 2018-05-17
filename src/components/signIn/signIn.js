@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { loginWithGoogle, logout  } from './auth';
 import { rebase } from './base.js';
 import Geolocated from './geolocated';
+import logo from './doLogo.png';
+import GoogleBtn from './btn_google_signin_dark_normal_web.png';
+import './signIn.css';
+
 
 class Signin extends Component {
 
@@ -13,9 +17,9 @@ class Signin extends Component {
     render() {
         return (
             <div className="container">
-                <div className="d-flex flex-column justify-content-center text-center">
-                    <h1> Google Login</h1>
-                    <button type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg">Login</button>
+                <div className="d-flex flex-column justify-content-center align-items-center">
+                    <img className="mx-auto mt-5 pt-5 mb-0 pb-0" src={logo} alt="do. logo" />
+                    <button className="mx-auto" type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg"><img src={GoogleBtn} alt="do. logo" /></button>
                     <Geolocated />
                 </div>
             </div>
