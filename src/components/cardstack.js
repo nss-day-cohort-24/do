@@ -5,6 +5,7 @@ import ParkName from './parkParts/park-name';
 import ParkRating from './parkParts/park-rating';
 import ParkPic from './parkParts/park1.jpg';
 import './cardstack.css';
+import './parkParts/park-parts.css';
 
 class Cardstack extends Component {
     render() {
@@ -15,7 +16,6 @@ class Cardstack extends Component {
                 <img src={ParkPic} alt="park picture" className="parkpic"/>
                 {/* <ParkName name={this.props.name} /> */}
                 <h3>{this.props.name}</h3>
-                <h2>{this.props.type}</h2>
                 <ParkRating />            
             </div>
             <CircleButtons />
