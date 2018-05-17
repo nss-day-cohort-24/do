@@ -6,11 +6,7 @@ import './park-parts.css';
      * Star Rating Compononent
  */
 
- export class ParkRating extends React.Component {
-
-
-
-
+class ParkRating extends React.Component {
 
     render() {
         
@@ -31,3 +27,5 @@ import './park-parts.css';
         )
     }
 }
+
+export default ParkRating

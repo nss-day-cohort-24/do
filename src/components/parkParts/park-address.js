@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
  export function ParkAddress({address}) {
 
 
+<<<<<<< HEAD
     const styles={
         color: "#707070",
         fontFamily: "raleway, sans-serif",
@@ -22,3 +23,10 @@ import ReactDOM from 'react-dom';
         </div>
     )
 }
+=======
+            <div>
+                <h3 className="address">{address}</h3>
+            </div>
+        )
+}
+>>>>>>> master

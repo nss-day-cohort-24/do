@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './park-parts.css';
 
 /**
      * Park Name
  */
 
- export function ParkName({name}) {
 
+<<<<<<< HEAD
     const styles = {
         color: "#6BD628",
         fontFamily: "raleway, sans-serif",
@@ -21,3 +22,14 @@ import ReactDOM from 'react-dom';
     )
     
 }
+=======
+function ParkName({name}){
+    return (
+        <div>
+            <h3 className="name">Shelby Bottoms</h3>
+        </div>
+    )
+}
+
+export default ParkName
+>>>>>>> master
