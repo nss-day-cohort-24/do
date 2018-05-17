@@ -8,19 +8,21 @@ import './btn-circles.css';
 class CircleButtons extends Component {
     render() {
         return (
-            <div className="buttonContainer">
-                <button className="smallCircleLeftButton">
-                    <img src={arrow} alt="yellow circular arrow"/>
-                </button>    
-                <button className="largeCircleButton">
-                    <img src={times} alt="red letter X"/>    
-                </button>
-                <button className="largeCircleButton">
-                    <img src={heart} alt="green heart"/>
-                </button>
-                <button className="smallCircleRightButton">
-                    <img src={marker} alt="blue map marker"/>
-                </button>
+            <div className="buttonContainerContainer">
+                <div className="buttonContainer">
+                    <button className="smallCircleLeftButton">
+                        <img src={arrow} alt="yellow circular arrow"/>
+                    </button>    
+                    <button className="largeCircleButton">
+                        <img src={times} alt="red letter X"/>    
+                    </button>
+                    <button className="largeCircleButton">
+                        <img src={heart} alt="green heart"/>
+                    </button>
+                    <button className="smallCircleRightButton">
+                        <img src={marker} alt="blue map marker"/>
+                    </button>
+                </div>
             </div>
         )
     }   

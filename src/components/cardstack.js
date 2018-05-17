@@ -15,8 +15,10 @@ class Cardstack extends Component {
             <div className="parkcard">
                 <img src={ParkPic} alt="park picture" className="parkpic"/>
                 {/* <ParkName name={this.props.name} /> */}
-                <h3>{this.props.name}</h3>
-                <ParkRating />            
+                <div className="card-info">
+                    <h3>{this.props.name}</h3>
+                    <ParkRating /> 
+                </div>           
             </div>
             <CircleButtons />
         </div>
