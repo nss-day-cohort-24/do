@@ -7,12 +7,17 @@ import ReactDOM from 'react-dom';
 
  export function ParkName({name}) {
 
-        return (
+    const styles = {
+        color: "#6BD628",
+        fontFamily: "raleway, sans-serif",
+        fontWeight: "200"
+    }
 
-            <div>
-                <h3 className="name">{name}</h3>
-            </div>
 
-        )
+    return (
+        <div>
+            <h3 className="name" style={styles}>{name}</h3>
+        </div>
+    )
     
 }

@@ -1,3 +1,5 @@
 ```js
-<ParkAddress address="Address"/>
+const POIAddress = "Riverfront Park";
+
+<ParkAddress address={POIAddress}/>
 ```
