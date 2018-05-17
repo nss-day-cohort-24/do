@@ -12,7 +12,5 @@ import ReactDOM from 'react-dom';
             <div>
                 <h3 className="address">{address}</h3>
             </div>
-
         )
-    
 }
