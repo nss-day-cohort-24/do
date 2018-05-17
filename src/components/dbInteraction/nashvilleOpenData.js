@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import CardStack from '../cardstack'; 
 
+var name = "Potters Field";
+//test string for querying database
+var query = `?$where=park_name="${name}"`
 
-
+var parksAPI = `https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`;
+var historyAPI = `https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`;
+var artAPI = `https://data.nashville.gov/resource/m4hn-ihe4.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`;
 
 class NashvilleOpenData extends Component {
 
@@ -16,19 +21,36 @@ class NashvilleOpenData extends Component {
 }
 
 // function that takes API url and dataType 
-  getThatAPI(url, type,name){
-    console.log("getThatAPI url", url+name);
-    console.log("getThatAPI type", type);
+  getThatAPI(apiNumber){
+  
+    switch(apiNumber) {
+      case 0:
+          this.setState({dataType: 'parks'})
+          this.callTheAPI(parksAPI);
+          break;
+      case 1:
+          this.setState({dataType: 'art'})
+          this.callTheAPI(artAPI);
+          break;
+      case 2:
+          this.setState({dataType: 'history'})
+          this.callTheAPI(historyAPI);
+        break;         
+  }
+  }
+
+  callTheAPI(url){
+    console.log(url);
     fetch(url)
     .then(data => data.json())
     .then((data) => {
       console.log(data);
-      this.setState({data: data, dataLoaded: true, dataType: type});
+      this.setState({data: data, dataLoaded: true});
     })
   }
 
   componentDidMount(){
-    this.getThatAPI(this.props.url, this.props.dataType,this.props.name);
+    this.getThatAPI(this.props.api);
   }
   
   render() {
