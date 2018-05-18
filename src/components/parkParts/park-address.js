@@ -1,16 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 /**
      * Park Address
  */
 
- export function ParkAddress({address}) {
-
+ export default class ParkAddress extends React.Component {
+    render() {
         return (
-
             <div>
-                <h3 className="address">{address}</h3>
+                <h3 className="address">{this.props.address}</h3>
             </div>
-        )
+        );
+    };
 }
