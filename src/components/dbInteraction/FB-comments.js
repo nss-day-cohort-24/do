@@ -1,5 +1,5 @@
-export function saveComment (userID, poiID, commentString) {
-    console.log("This user, ", userID, "made this comment, ", commentString, "about this park,", poiID);
+export default function SaveComment (userID, poiID, commentString) {
+    console.log('The save comment button has been clicked');
     // return rebase.initializedApp.database().ref().child(`comments/`)
     //   .update({
     //     email: user.email,

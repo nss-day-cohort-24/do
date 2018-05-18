@@ -4,6 +4,7 @@
     import ParkRating from './parkParts/park-rating';
     import ParkPic from './parkParts/park1.jpg';
     import ParkAddress from './parkParts/park-address';
+    import SaveComment from './dbInteraction/FB-comments';
     export class ParkDetails extends Component {
         
         render() {
@@ -23,7 +24,7 @@
                 </div>
                 <div>
                     <div>
-                        <AddComment />
+                        <CommentForm />
                     </div>
                     <div>
                         <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
@@ -62,7 +63,19 @@
     class AddComment extends Component {
         render() {
             return (
-                <button type="button" className="btn btn-primary">Add Comment</button>
+                <button type="button" onClick={SaveComment} className="btn btn-primary">Add Comment</button>
             );
         };
+    }
+
+    class CommentForm extends Component {
+        render() {
+            return (
+                <form>
+                    <label for="textarea1">Add Your Comment</label>
+                    <textarea class="form-control" id="textarea1" rows="3"></textarea>
+                    <AddComment />
+                </form>
+            )
+        }
     }
