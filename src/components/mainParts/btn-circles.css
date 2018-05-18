@@ -7,25 +7,19 @@
 }
 
 .smallCircleRightButton {
-    position: relative;
     background-color: white;
     border-color: #f1f1f1;
     border-radius: 50%;
     border-width: 10px;
     height: 70px;
     width: 70px;
-    bottom: 50px;
-    right: 10px;
 }
 
 .smallCircleLeftButton {
     background-color: white;
-    position: relative;
     border-color: #f1f1f1;
     border-radius: 50%;
     border-width: 10px;
     height: 70px;
     width: 70px;
-    bottom: 50px;
-    left: 10px;
 }
