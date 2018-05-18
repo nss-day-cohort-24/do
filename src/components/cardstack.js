@@ -19,22 +19,21 @@ class Cardstack extends Component {
     }
 
     render() {
-
-        return <div className="d-flex flex-column">
-            <div className="parkcard">
-                <img src={ParkPic} alt="park picture" className="parkpic"/>
-                {/* <ParkName name={this.props.name} /> */}
-                <h3>{this.toTitleCase(this.props.name)}</h3>
-                <h2>{this.props.type.charAt(0).toUpperCase()+this.props.type.substr(1).toLowerCase()}</h2>
-                <ParkRating />            
-
         console.log('what is this?', this.props)
         console.log("cardstack name props", this.props.name);
         console.log("this.props.type", this.props.type);
-            <div>
-                <CircleButtons />
 
-            </div>
+        return <div className="d-flex flex-column">
+                    <div className="parkcard">
+                        <img src={ParkPic} alt="park picture" className="parkpic"/>
+                        {/* <ParkName name={this.props.name} /> */}
+                        <h3>{this.toTitleCase(this.props.name)}</h3>
+                        <h2>{this.props.type.charAt(0).toUpperCase()+this.props.type.substr(1).toLowerCase()}</h2>
+                        <ParkRating />            
+                    <div>
+                        <CircleButtons />
+                    </div>
+                </div>
         </div>
     }
 }
