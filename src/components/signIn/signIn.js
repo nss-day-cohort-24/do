@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { loginWithGoogle, logout  } from './auth';
 import { rebase } from './base.js';
-
+import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 class Signin extends Component {
 
     authenticate(){
@@ -13,8 +13,7 @@ class Signin extends Component {
         return (
             <div className="container">
                 <div className="d-flex flex-column justify-content-center text-center">
-                    <h1> Google Login</h1>
-                    <button type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg">Login</button>
+                    <button type="button" onClick={() => this.authenticate('google')} className="btn btn-primary btn-lg active" aria-pressed="true">Login with Google</button>
                 </div>
             </div>
         )
