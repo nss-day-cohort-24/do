@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { loginWithGoogle, logout  } from './auth';
-import { rebase } from './base.js';
+// import { rebase } from './base.js';
 import Geolocated from './geolocated';
 
 class Signin extends Component {
