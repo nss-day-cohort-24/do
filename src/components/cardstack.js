@@ -9,9 +9,6 @@ import './parkParts/park-parts.css';
 
 class Cardstack extends Component {
     render() {
-        console.log('what is this?', this.props)
-        console.log("cardstack name props", this.props.name);
-        console.log("this.props.type", this.props.type);
         return <div className="d-flex flex-column">
             <div className="parkcard">
                 <img src={ParkPic} alt="park picture" className="parkpic"/>
