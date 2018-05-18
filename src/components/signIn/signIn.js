@@ -6,7 +6,7 @@ import logo from './doLogo.png';
 import GoogleBtn from './btn_google_signin_dark_normal_web.png';
 import './signIn.css';
 // import { rebase } from './base.js';
-import Geolocated from './geolocated';
+
 
 
 class Signin extends Component {
