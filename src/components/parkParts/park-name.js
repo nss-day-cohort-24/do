@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './park-parts.css';
 
 /**
@@ -13,6 +12,6 @@ function ParkName({name}){
             <h3 className="name">{this.props.name}</h3>
         </div>
     )
-}
+};
 
-export default ParkName
+export default ParkName;
