@@ -23,7 +23,9 @@ import { googleProvider, rebase }  from './base.js';
     export function checkUser () {
     rebase.initializedApp.auth().onAuthStateChanged(function (user) {
         if (user) {
-        // Your code here
+          this.setState({
+            authed: true,
+          });
         }
     })
     }

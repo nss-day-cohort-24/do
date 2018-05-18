@@ -11,6 +11,9 @@ class Cardstack extends Component {
 
     constructor(){
         super()
+        this.state = {
+            details: false,
+        }
         this.toTitleCase = this.toTitleCase.bind(this);
     }
 
@@ -23,18 +26,33 @@ class Cardstack extends Component {
         console.log("cardstack name props", this.props.name);
         console.log("this.props.type", this.props.type);
 
-        return <div className="d-flex flex-column">
+        
+        if (this.state.details) {
+            return(
+                <div className="d-flex flex-column">
+                 <h1>hi</h1>
+                <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: false })} />
+                </div>
+            )
+        } else {
+            return (
+                <div className="d-flex flex-column">
                     <div className="parkcard">
-                        <img src={ParkPic} alt="park picture" className="parkpic"/>
+                        <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
                         <h3>{this.toTitleCase(this.props.name)}</h3>
-                        <h2>{this.props.type.charAt(0).toUpperCase()+this.props.type.substr(1).toLowerCase()}</h2>
-                        <ParkRating />            
-                    <div>
-                        <CircleButtons />
+                        <h2>{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
+                        <ParkRating />
+                        <div>
+                            <CircleButtons />
+                        </div>
                     </div>
                 </div>
-        </div>
+            )
+         
+        }
+        
+        
     }
 }
 
