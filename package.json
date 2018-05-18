@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "hammerjs": "^2.0.8",
+    "geolib": "^2.0.24",
     "re-base": "^3.2.2",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -12,6 +13,7 @@
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "react-styleguidist": "^7.0.14"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
