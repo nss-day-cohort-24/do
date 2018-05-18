@@ -43,14 +43,6 @@
         };
     };
 
-    class AddComment extends Component {
-        render() {
-            return (
-                <button type="button" className="btn btn-primary">Add Comment</button>
-            );
-        };
-    }
-
     class Comment extends Component {
 
         render () {
@@ -63,6 +55,14 @@
                         <p>{this.props.commentText}</p>
                     </div>
                 </div>
+            );
+        };
+    }
+
+    class AddComment extends Component {
+        render() {
+            return (
+                <button type="button" className="btn btn-primary">Add Comment</button>
             );
         };
     }
