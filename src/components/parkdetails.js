@@ -14,7 +14,7 @@
                     <img src={ParkPic} alt="park picture" className="parkpic"/>
                     <h3>{this.props.name}</h3>
                     <p><ParkAddress address={parkAddress}/></p>
-                    <ParkRating /> 
+                    {/* <ParkRating />   */}
                     <ul>
                         <ParkDetail detail="This is an amazing park"/>
                         <ParkDetail detail="There's a dog park nearby"/>
@@ -22,8 +22,13 @@
                     </ul>
                 </div>
                 <div>
-                    <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
-                    <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." />
+                    <div>
+                        <AddComment />
+                    </div>
+                    <div>
+                        <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
+                        <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." />
+                    </div>
                 </div>
             </div>
             );
@@ -37,6 +42,14 @@
             );
         };
     };
+
+    class AddComment extends Component {
+        render() {
+            return (
+                <button type="button" className="btn btn-primary">Add Comment</button>
+            );
+        };
+    }
 
     class Comment extends Component {
 
