@@ -75,12 +75,12 @@ class App extends Component {
     if(this.state.pickedAnAPI){
     return (
       <div>
-        {/* <Signin /> */}
+        <Signin />
         {/* <Cardstack /> */}
 
-        <NashvilleOpenData api={this.state.apiNumber} />
+        {/* <NashvilleOpenData api={this.state.apiNumber} /> */}
 
-        <Geolocated />
+        {/* <Geolocated /> */}
 
 
       </div>
