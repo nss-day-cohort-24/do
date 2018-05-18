@@ -1,0 +1,42 @@
+.main-profile-pic {
+    border: solid #f1f1f1 10px;
+    border-radius: 50%;
+    border-width: 10;
+    height: 200px;
+    width: 200px
+}
+
+.user-name-styles {
+    color: #FFB236;
+    text-align: center;
+    font-family: comforta, sans-serif;
+}
+
+.mi-styles {
+    border: solid #FFB236 3px;
+    border-radius: 50%;
+    border-width: 3px;
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    margin: .4em;
+    font-family: comforta, sans-serif;
+    font-weight: bold;
+
+}
+
+.mi-styles p {    
+    text-align: center;
+    padding: 0.5em 0;
+}
+
+.main-profile-div {
+    display: inline-block;
+    padding: 1em;
+    /* border: solid; */
+}
+
+#heart-icon {    
+    display: block;
+    margin: 1em auto;
+}
