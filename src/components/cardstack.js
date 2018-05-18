@@ -11,14 +11,16 @@ class Cardstack extends Component {
     render() {
         console.log("cardstack name props", this.props.name);
         console.log("this.props.type", this.props.type);
-        return <div>
+        return <div className="d-flex flex-column">
             <div className="parkcard">
                 <img src={ParkPic} alt="park picture" className="parkpic"/>
                 {/* <ParkName name={this.props.name} /> */}
                 <h3>{this.props.name}</h3>
-                <ParkRating />            
+                {/* <ParkRating />             */}
             </div>
-            <CircleButtons />
+            <div>
+                <CircleButtons />
+            </div>
         </div>
     }
 }
