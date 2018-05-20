@@ -12,3 +12,10 @@
 .top-nav-user-img img {
     border-radius: 50%;
 }
+
+h4 {
+    color: #6AD627 !important;
+    font-family: raleway, sans-serif !important;
+    font-size: 12px !important;
+    
+}

@@ -15,9 +15,9 @@ class TopNav extends Component {
                     <img className="top-nav-logo" src={logo} alt="do logo"/>
                     <div className="top-nav-user-img mr-4">
                         <img className="img-thumbnail" src={profileImg} alt="user image"/>
+                        <h4 className="pl-2">Logout</h4>
                     </div>
                 </div>
-                <h3>{name}</h3>
             </React.Fragment>
         )
     }
