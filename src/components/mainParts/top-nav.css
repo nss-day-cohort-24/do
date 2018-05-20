@@ -2,3 +2,9 @@
     width: 75px;
     height: 75px;
 }
+
+.top-nav-user-img {
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+}

@@ -6,9 +6,9 @@ import userCircle from '../images/user-circle.svg';
 class TopNav extends Component {
     render() {
         return(
-            <div className="d-flex">
+            <div className="d-flex justify-content-between">
                 <img className="top-nav-logo" src={logo} alt="do logo"/>
-                <img />
+                <img className="top-nav-user-img mr-4" src={userCircle} alt="user image"/>
             </div>
         )
     }
