@@ -1,11 +1,11 @@
-/* #star-rating-container {
+#star-rating-container {
     display: inline-block !important;
 }
 
 #star-rating-container svg.col {
     fill: #FFB239 !important;
-    width: 2px !important;
-} */
+    width: 1em !important;
+}
 
 h3 {
     color: #6AD627 !important;
