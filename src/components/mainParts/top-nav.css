@@ -8,3 +8,7 @@
     height: 60px;
     padding-top: 10px;
 }
+
+.top-nav-user-img img {
+    border-radius: 50%;
+}

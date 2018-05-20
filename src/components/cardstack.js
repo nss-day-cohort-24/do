@@ -9,8 +9,7 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 
 class Cardstack extends Component {
-
-    constructor(){
+    constructor() {
         super()
         this.state = {
             details: false,
@@ -26,7 +25,6 @@ class Cardstack extends Component {
         console.log('what is this?', this.props)
         console.log("cardstack name props", this.props.name);
         console.log("this.props.type", this.props.type);
-
         
         if (this.state.details) {
             return(
@@ -38,7 +36,7 @@ class Cardstack extends Component {
         } else {
             return (
                 <div className="d-flex flex-column ml-4">
-                    <TopNav />
+                    <TopNav user={this.props.user} />
                     <div className="parkcard">
                         <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}

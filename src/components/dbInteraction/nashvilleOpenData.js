@@ -56,17 +56,17 @@ class NashvilleOpenData extends Component {
   //print parks
   if(this.state.dataLoaded  && this.state.dataType === 'parks'){
   var dataStuff = this.state.data;
-      return (<CardStack  name={dataStuff[0].park_name} type={this.state.dataType} />)
+      return (<CardStack  name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} />)
 
   // print art
   }else if(this.state.dataLoaded && this.state.dataType === 'art'){
     var dataStuff = this.state.data;
-        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} />)
+        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} />)
 
   //print history
   }else if(this.state.dataLoaded && this.state.dataType === 'history'){
     var dataStuff = this.state.data;
-        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} />)
+        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} />)
   }else if (!this.state.dataLoaded){
       return(
         <div>
