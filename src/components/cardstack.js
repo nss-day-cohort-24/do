@@ -36,14 +36,14 @@ class Cardstack extends Component {
             )
         } else {
             return (
-                <div className="d-flex flex-column">
+                <div className="d-flex flex-column ml-4">
                     <div className="parkcard">
                         <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
                         <h3>{this.toTitleCase(this.props.name)}</h3>
                         <h2>{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
-                        <div className='fixed-bottom pb-4'>
+                        <div className='fixed-bottom pb-4 pl-3'>
                             <CircleButtons />
                         </div>
                     </div>
