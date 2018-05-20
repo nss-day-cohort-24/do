@@ -10,19 +10,28 @@ import './signIn.css';
 
 
 
-class Signin extends Component {
+const styles = {
+    backgroundColor: "white",
+    border: "none"
+}
 
+
+
+class Signin extends Component {
+    
     authenticate(){
         console.log('App: calling autheticate for google');
         loginWithGoogle();
-      }
-
+    }
+    
     render() {
+        
+
         return (
             <div className="container">
                 <div className="d-flex flex-column justify-content-center text-center">
                     <img className="mx-auto mt-5 pt-5 mb-0 pb-0" src={logo} alt="do. logo" />
-                    <button type="button" onClick={() => this.authenticate('google')} className="btn btn-primary btn-lg active" aria-pressed="true">Login with Google</button>
+                    <button style={styles} type="button" onClick={() => this.authenticate('google')} className="login-btn btn btn-secondary btn-lg mx-auto"><img src={GoogleBtn} alt="do. logo" /></button>
                     <Geolocated />
                 </div>
             </div>
