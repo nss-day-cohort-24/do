@@ -43,7 +43,7 @@ class Cardstack extends Component {
                         <h3>{this.toTitleCase(this.props.name)}</h3>
                         <h2>{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
-                        <div>
+                        <div className='fixed-bottom pb-4'>
                             <CircleButtons />
                         </div>
                     </div>
