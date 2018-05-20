@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { loginWithGoogle, logout  } from './auth';
-import { rebase } from './base.js';
+import { loginWithGoogle, logout  } from '../dbInteraction/auth';
+import { rebase } from '../dbInteraction/base';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
 import Geolocated from './geolocated';
 import logo from './doLogo.png';
