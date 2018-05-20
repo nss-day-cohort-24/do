@@ -4,6 +4,7 @@
     import ParkRating from './parkParts/park-rating';
     import ParkPic from './parkParts/park1.jpg';
     import ParkAddress from './parkParts/park-address';
+    import SaveComment from './dbInteraction/FB-comments';
     export class ParkDetails extends Component {
         
         render() {
@@ -14,7 +15,7 @@
                     <img src={ParkPic} alt="park picture" className="parkpic"/>
                     <h3>{this.props.name}</h3>
                     <p><ParkAddress address={parkAddress}/></p>
-                    <ParkRating /> 
+                    {/* <ParkRating />   */}
                     <ul>
                         <ParkDetail detail="This is an amazing park"/>
                         <ParkDetail detail="There's a dog park nearby"/>
@@ -22,8 +23,13 @@
                     </ul>
                 </div>
                 <div>
-                    <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
-                    <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." />
+                    <div>
+                        <CommentForm />
+                    </div>
+                    <div>
+                        <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
+                        <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." />
+                    </div>
                 </div>
             </div>
             );
@@ -52,4 +58,16 @@
                 </div>
             );
         };
+    }
+
+    class CommentForm extends Component {
+        render() {
+            return (
+                <form>
+                    <label for="textarea1">Add Your Comment</label>
+                    <textarea class="form-control" id="textarea1" rows="3"></textarea>
+                    <button type="button" onClick={SaveComment} className="btn btn-primary">Add Comment</button>
+                </form>
+            )
+        }
     }
