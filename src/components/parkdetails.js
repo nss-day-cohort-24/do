@@ -60,21 +60,13 @@
         };
     }
 
-    class AddComment extends Component {
-        render() {
-            return (
-                <button type="button" onClick={SaveComment} className="btn btn-primary">Add Comment</button>
-            );
-        };
-    }
-
     class CommentForm extends Component {
         render() {
             return (
                 <form>
                     <label for="textarea1">Add Your Comment</label>
                     <textarea class="form-control" id="textarea1" rows="3"></textarea>
-                    <AddComment />
+                    <button type="button" onClick={SaveComment} className="btn btn-primary">Add Comment</button>
                 </form>
             )
         }
