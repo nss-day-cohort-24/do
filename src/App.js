@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { googleProvider, rebase } from './components/signIn/base.js';
 import './App.css';
 import Signin from './components/signIn/signIn';
 import Cardstack from './components/cardstack';
@@ -40,6 +41,7 @@ class App extends Component {
       pickedAnAPI: false,
       apiNumber: '',
       swiped: false,
+      authed: false,
     }
 
     this.logSwipe = this.logSwipe.bind(this);
@@ -68,11 +70,17 @@ class App extends Component {
 
   componentDidMount(){
     this.getAnAPI();
+    this.authListener = rebase.initializedApp.auth().onAuthStateChanged((user) => {
+        this.setState({
+          authed: true,
+          user: user
+        });
+    })
   }
 
   render() {
 
-    if(this.state.pickedAnAPI){
+    if(this.state.pickedAnAPI && !this.state.authed){
     return (
       <div>
         <Signin />
@@ -83,6 +91,13 @@ class App extends Component {
         {/* <Geolocated /> */}
 
 
+      </div>
+    )
+  }else if(this.state.pickedAnAPI && this.state.authed){
+    return(
+      <div>
+        <NashvilleOpenData api={this.state.apiNumber} />
+        {/* <Geolocated /> */}
       </div>
     )
   }else{
