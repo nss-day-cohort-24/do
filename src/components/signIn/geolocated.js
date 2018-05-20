@@ -17,17 +17,17 @@ class Demo extends React.Component {
 
     componentDidMount = () => {
         if(this.props.isGeolocationEnabled) {
-            setTimeout(() => {
-                this.setState({
-                    lat: this.props.coords.latitude,
-                    long: this.props.coords.longitude,
-                    time: true
+            // setTimeout(() => {
+            //     this.setState({
+            //         lat: this.props.coords.latitude,
+            //         long: this.props.coords.longitude,
+            //         time: true
 
-                });
-                console.log('you are here: ', this.state.lat, this.state.long);
+            //     });
+            //     console.log('you are here: ', this.state.lat, this.state.long);
                 
 
-            }, 4000);
+            // }, 4000);
         }   
     }
 
