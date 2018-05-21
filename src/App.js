@@ -77,7 +77,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    // this.getAnAPI();
+    this.getAnAPI();
     // this.authListener = rebase.initializedApp.auth().onAuthStateChanged((user) => {
     //     this.setState({
     //       authed: true,
@@ -88,9 +88,17 @@ class App extends Component {
 
   render() {
     console.log('auth state 1', this.state.authed);
-    return(
-      <Signin  changeAuth={this.changeAuth}/>
-    );
+    
+    if (!this.state.authed) {
+      return(
+        <Signin  changeAuth={this.changeAuth}/>
+      );
+    }
+    else if (this.state.authed) {
+      return(
+        <NashvilleOpenData api={this.state.apiNumber} />
+      )
+    }
 }
 }
 

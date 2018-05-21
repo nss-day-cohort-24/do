@@ -22,7 +22,6 @@ class NashvilleOpenData extends Component {
 
 // function that takes API url and dataType 
   getThatAPI(apiNumber){
-  
     switch(apiNumber) {
       case 0:
           this.setState({dataType: 'parks', dataLoaded: false})
@@ -56,17 +55,17 @@ class NashvilleOpenData extends Component {
   //print parks
   if(this.state.dataLoaded  && this.state.dataType === 'parks'){
   var dataStuff = this.state.data;
-      return (<CardStack  name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} />)
+      return (<CardStack  name={dataStuff[0].park_name} type={this.state.dataType}  />)
 
   // print art
   }else if(this.state.dataLoaded && this.state.dataType === 'art'){
     var dataStuff = this.state.data;
-        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} />)
+        return (<CardStack name={dataStuff[0].title} type={this.state.dataType}  />)
 
   //print history
   }else if(this.state.dataLoaded && this.state.dataType === 'history'){
     var dataStuff = this.state.data;
-        return (<CardStack name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} />)
+        return (<CardStack name={dataStuff[0].title} type={this.state.dataType}  />)
   }else if (!this.state.dataLoaded){
       return(
         <div>
