@@ -22,7 +22,6 @@ class NashvilleOpenData extends Component {
 
 // function that takes API url and dataType 
   getThatAPI(apiNumber){
-  
     switch(apiNumber) {
       case 0:
           this.setState({dataType: 'parks', dataLoaded: false})

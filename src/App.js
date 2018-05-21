@@ -44,16 +44,13 @@ class App extends Component {
       authed: false,
     }
 
-    this.logSwipe = this.logSwipe.bind(this);
+    // this.logSwipe = this.logSwipe.bind(this);
     this.getAnAPI = this.getAnAPI.bind(this);
     this.swipeAnAPI = this.swipeAnAPI.bind(this);
+    this.changeAuth = this.changeAuth.bind(this);
 
     this.hammer = new Hammer(document.body, {preventDefault: true});
     this.hammer.on('swipe', this.swipeAnAPI);
-  }
-
-  logSwipe(event){
-    console.log(event);
   }
 
   swipeAnAPI(){
@@ -68,38 +65,35 @@ class App extends Component {
     })
   }
 
-  componentDidMount(){
-    this.getAnAPI();
-    this.authListener = rebase.initializedApp.auth().onAuthStateChanged((user) => {
-        this.setState({
-          authed: true,
-          user: user
-        });
+  changeAuth(user){
+    this.setState({
+      authed: true,
+      user: user,
+      pickedAnAPI: true
     })
   }
 
-  render() {
-
-    if(this.state.pickedAnAPI && !this.state.authed){
-    return (
-      <div>
-        <Signin />
-      </div>
-    )
-  }else if(this.state.pickedAnAPI && this.state.authed){
-    return(
-      <div>
-
-        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
-      </div>
-    )
-  }else{
-    return(
-    <div>
-      Loading....
-    </div>
-    )
+  componentDidMount(){
+    this.getAnAPI();
   }
+
+  render() {    
+    if (!this.state.authed) {
+      return(
+        <Signin  changeAuth={this.changeAuth}/>
+      );
+    }
+    else if (this.state.authed && this.state.pickedAnAPI) {
+      return(
+        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
+      )
+    }else{
+      return(
+      <div>
+        LOADING....
+      </div>
+      )
+    }
 }
 }
 
