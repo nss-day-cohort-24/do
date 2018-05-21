@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { googleProvider, rebase } from './components/dbInteraction/base';
 import './App.css';
 import Signin from './components/signIn/signIn';
+import ParkDetails from './components/parkdetails';
 import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Hammer from 'hammerjs';
@@ -83,11 +84,9 @@ class App extends Component {
     if(this.state.pickedAnAPI && !this.state.authed){
     return (
       <div>
-        <Signin />
+        {/* <Signin /> */}
         {/* <Cardstack /> */}
-
         {/* <NashvilleOpenData api={this.state.apiNumber} /> */}
-
         {/* <Geolocated /> */}
 
 
@@ -97,6 +96,7 @@ class App extends Component {
     return(
       <div>
         <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
+        {/* <ParkDetails /> */}
         {/* <Geolocated /> */}
       </div>
     )

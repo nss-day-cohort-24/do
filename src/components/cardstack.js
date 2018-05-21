@@ -7,6 +7,7 @@ import ParkRating from './parkParts/park-rating';
 import ParkPic from './parkParts/park1.jpg';
 import './cardstack.css';
 import './parkParts/park-parts.css';
+import ParkDetails from './parkdetails.js';
 
 class Cardstack extends Component {
     constructor() {
@@ -29,9 +30,16 @@ class Cardstack extends Component {
         if (this.state.details) {
             return(
                 <div className="d-flex flex-column">
-                 <h1>hi</h1>
-                <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: false })} />
+
+
+                 <ParkDetails details={this.state.details}/>
+                {/* <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: false })} /> */}
                 </div>
+
+
+
+
+
             )
         } else {
             return (
