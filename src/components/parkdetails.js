@@ -16,7 +16,11 @@
 
         
         render() {
-            const parkAddress = this.props.address;
+            // const parkAddress = this.props.address;
+            const parkAddress = this.props.location;
+            const allInfo = this.props.allInfo;
+            // const name
+            console.log(allInfo);
             // console.log({parkAddress});
 
             return (
@@ -26,10 +30,10 @@
 
                         <img src={ParkPic} alt="park picture" className="detailparkpic" />
 
-                    {/* <h3>{this.props.name}</h3> */}
-                    <h3 className="ml-3">Park Name</h3>
-                    {/* <p><ParkAddress address={parkAddress}/></p> */}
-                    <p><ParkAddress address="Test address"/></p>
+                    <h3>{this.props.name}</h3>
+                    {/* <h3 className="ml-3">Park Name</h3> */}
+                    <p><ParkAddress address={parkAddress}/></p>
+                    {/* <p><ParkAddress address="Test address"/></p> */}
                     <ParkRating /> 
                     <ul>
                         <ParkDetail detail="This is an amazing park"/>
