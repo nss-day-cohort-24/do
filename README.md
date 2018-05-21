@@ -24,7 +24,7 @@ the locator.
 <br />
 <br />
 the final.
-<iframe width="560" height="315" src="https://www.youtube.com/embed/9UZHcq_YaeY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+[![Final Prototype](ReadmeFiles/home.png)](https://www.youtube.com/watchv=9UZHcq_YaeYfeature=youtu.be "do. Prototype")
 
 # MVP goals.
 1. Authenticate user with Google Auth
