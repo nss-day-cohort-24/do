@@ -15,6 +15,7 @@ class Profile extends React.Component {
 
     logoutGoogle() {
         logout();
+        this.props.logoutApp();
     }
 
 

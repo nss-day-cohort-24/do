@@ -49,6 +49,7 @@ class App extends Component {
     this.getAnAPI = this.getAnAPI.bind(this);
     this.swipeAnAPI = this.swipeAnAPI.bind(this);
     this.changeAuth = this.changeAuth.bind(this);
+    this.logoutApp = this.logoutApp.bind(this);
 
     this.hammer = new Hammer(document.body, {preventDefault: true});
     this.hammer.on('swipe', this.swipeAnAPI);
@@ -74,6 +75,14 @@ class App extends Component {
     })
   }
 
+  logoutApp(){
+    this.setState({
+      authed: false,
+      // user: user,
+      // pickedAnAPI: true
+    })
+  }
+
   componentDidMount(){
     this.getAnAPI();
   }
@@ -86,7 +95,7 @@ class App extends Component {
     }
     else if (this.state.authed && this.state.pickedAnAPI) {
       return(
-        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
+        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} logoutApp={this.logoutApp} />
       )
     }else{
       return(

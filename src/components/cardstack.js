@@ -52,7 +52,7 @@ class Cardstack extends Component {
             )
         } else if (this.state.profile){
             return (
-            <Profile user={this.props.user} viewCard={this.viewCard} />
+            <Profile user={this.props.user} viewCard={this.viewCard} logoutApp={this.props.logoutApp}/>
             )
         } else {
             return (
