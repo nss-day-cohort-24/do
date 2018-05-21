@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './profile.css';
+import { logout } from './signIn/auth';
+import logo from './images/doLogo.png';
+
 
 /**
      * Profile. 
@@ -9,22 +12,38 @@ import './profile.css';
 
 class Profile extends React.Component {
 
+    logoutGoogle() {
+        logout();
+    }
+
+
     render() {
+        const user = this.props.user.providerData[0];
+        const name = user.displayName;
+        const profileImg = user.photoURL;
+        // ? user.photoURL : userCircle;
+
 
 
         return (
 
-            <div className="main-profile-div container">
+            <div>
+                <div className="d-flex justify-content-between">
+                    <img className="top-nav-logo ml-4" src={logo} alt="do logo" onClick={this.props.viewCard}/>
+                    <div className="top-nav-user-img mr-4">
+                        <h4 onClick={() => this.logoutGoogle()}>logout</h4>
+                    </div>
+                </div>
 
                 <div className="row">
                     <div className="col">
                     
                     <div>
-                        <img className="main-profile-pic" src="https://www.gannett-cdn.com/-mm-/627137e74d46615a042ffc09ce283600631e71ea/c=130-0-410-373&r=537&c=0-0-534-712/local/-/media/2016/12/01/TennGroup/Knoxville/636161877374112105-McElroy-mug.JPG"/>
+                        <img className="main-profile-pic" alt="user profile image" src={profileImg}/>
                     </div>
 
 
-                    <h2 className="user-name-styles">hey, name!</h2>
+                    <h2 className="user-name-styles">hey, {name}!</h2>
 
                     <div className="mi-styles">
                         <p>1 mi</p>
