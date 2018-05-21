@@ -83,9 +83,7 @@ class App extends Component {
     if(this.state.pickedAnAPI && !this.state.authed){
     return (
       <div>
-
         <Signin />
-
       </div>
     )
   }else if(this.state.pickedAnAPI && this.state.authed){
@@ -93,7 +91,6 @@ class App extends Component {
       <div>
 
         <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
-        <Geolocated />
       </div>
     )
   }else{

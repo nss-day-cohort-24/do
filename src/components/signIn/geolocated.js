@@ -23,10 +23,26 @@ class Demo extends React.Component {
             ? <div>Geolocation is not enabled</div>
             : this.props.coords
             ? 
-                <Radius 
-                lat={this.props.coords.latitude}
-                long={this.props.coords.longitude} />
-            :<div></div>
+                <div>
+                    <div className="d-flex justify-content-center mb-4">
+                        <div className="mi-styles mx-3">
+                            <p>1 mi</p>
+                        </div>
+
+                        <div className="mi-styles mx-3">
+                            <p>5 mi</p>
+                        </div>
+                        
+                        <div className="mi-styles mx-3">
+                            <p>10 mi</p>
+                        </div>
+                    </div>
+
+                    <Radius 
+                    lat={this.props.coords.latitude}
+                    long={this.props.coords.longitude} />
+                </div>
+            :   <div></div>
     }
 }
  
