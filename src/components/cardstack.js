@@ -8,18 +8,35 @@ import ParkPic from './parkParts/park1.jpg';
 import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
+import Profile from './profile.js';
 
 class Cardstack extends Component {
     constructor() {
         super()
         this.state = {
             details: false,
+            profile: false,
         }
         this.toTitleCase = this.toTitleCase.bind(this);
+        this.viewProfile = this.viewProfile.bind(this);
+        this.viewCard = this.viewCard.bind(this);
     }
 
     toTitleCase(str) {
         return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase())
+    }
+
+    viewProfile(){
+        this.setState({
+            profile: true,
+        })
+    }
+
+    viewCard(){
+        this.setState({
+            details: false,
+            profile: false,
+        })
     }
 
     render() {
@@ -41,10 +58,14 @@ class Cardstack extends Component {
 
 
             )
+        } else if (this.state.profile){
+            return (
+            <Profile user={this.props.user} viewCard={this.viewCard} />
+            )
         } else {
             return (
                 <div className="d-flex flex-column ml-4">
-                    <TopNav user={this.props.user} />
+                    <TopNav user={this.props.user} viewProfile={this.viewProfile} />
                     <div className="parkcard">
                         <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
