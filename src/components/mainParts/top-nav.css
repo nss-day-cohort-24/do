@@ -1,0 +1,21 @@
+.top-nav-logo {
+    width: 75px;
+    height: 75px;
+}
+
+.top-nav-user-img {
+    width: 60px;
+    height: 60px;
+    padding-top: 10px;
+}
+
+.top-nav-user-img img {
+    border-radius: 50%;
+}
+
+h4 {
+    color: #6AD627 !important;
+    font-family: raleway, sans-serif !important;
+    font-size: 12px !important;
+    
+}

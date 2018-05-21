@@ -1,16 +1,23 @@
 #star-rating-container {
-    display: inline-block !important;
+
 }
 
-#star-rating-container svg.col {
-    fill: #FFB239 !important;
-    width: 1em !important;
+#star-rating-container svg {
+    fill: #FFB239;
+    width: 1.5em;
+    height: 2em;
 }
 
 h3 {
     color: #6AD627 !important;
     font-family: raleway, sans-serif !important;
     font-size: 18px !important;
+}
+
+h2 {
+    color: #6AD627 !important;
+    font-family: raleway, sans-serif !important;
+    font-size: 15px !important;   
 }
 
 .address {
