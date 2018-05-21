@@ -1,4 +1,4 @@
-import { googleProvider, rebase }  from './base.js';
+import { googleProvider, rebase }  from './base';
 
 // export function auth (email, pw) {
 //     return rebase.initializedApp.auth().createUserWithEmailAndPassword(email, pw)
