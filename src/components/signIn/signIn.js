@@ -15,13 +15,20 @@ const styles = {
     border: "none"
 }
 
-
+//user clicks login
+    /// event listener on sign in button
+    /// sign in button triggers function to check auth
+    /// if auth is true the show cardstack
+    /// if auth is not true, show warning stating that user needs google account to use app and then redirect to sign in
 
 class Signin extends Component {
-    
+
     authenticate(){
         console.log('App: calling autheticate for google');
-        loginWithGoogle();
+        const updateIt = this.props.changeAuth;
+        console.log('updateIt is:', updateIt);
+        loginWithGoogle(updateIt);
+        
     }
     
     render() {
