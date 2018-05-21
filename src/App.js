@@ -8,9 +8,9 @@ import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
 import { SaveObjToFB } from './components/dbInteraction/auth';
 
-const fakeObj = {name: "amber"};
+const fakeObj = {name: "amber", last: "sharpe"};
 
-SaveObjToFB('endpoint' , fakeObj);
+SaveObjToFB('commentTEST', fakeObj);
 
 
 var name = "Potters Field";

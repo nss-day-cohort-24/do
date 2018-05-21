@@ -51,12 +51,13 @@ import { googleProvider, rebase }  from './base';
   export function SaveObjToFB (endpoint, objToSave) { //object  {}, endPoint "endPoint"
     console.log("object to save:", objToSave);
     return rebase.post(endpoint, {
-      data: objToSave, 
+      data: {objToSave}, 
         then(err) {
           if(err) {
             console.log("this is a scary error", err);
           } else if (!err) {
             console.log("error free, baby!");
+            console.log(objToSave);
           }
         }
       })
