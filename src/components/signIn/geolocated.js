@@ -15,33 +15,34 @@ class Demo extends React.Component {
 
 
 
-    componentDidMount = () => {
-        if(this.props.isGeolocationEnabled) {
-            setTimeout(() => {
-                this.setState({
-                    lat: this.props.coords.latitude,
-                    long: this.props.coords.longitude,
-                    time: true
-
-                });
-                console.log('you are here: ', this.state.lat, this.state.long);
-                
-
-            }, 4000);
-        }   
-    }
 
     render() {
         return !this.props.isGeolocationAvailable
         ? <div>Your browser does not support Geolocation</div>
         : !this.props.isGeolocationEnabled
             ? <div>Geolocation is not enabled</div>
-            : this.state.time
+            : this.props.coords
             ? 
-                <Radius 
-                lat={this.state.lat}
-                long={this.state.long} />
-            :<div></div>
+                <div>
+                    <div className="d-flex justify-content-center mb-4">
+                        <div className="mi-styles mx-3">
+                            <p>1 mi</p>
+                        </div>
+
+                        <div className="mi-styles mx-3">
+                            <p>5 mi</p>
+                        </div>
+                        
+                        <div className="mi-styles mx-3">
+                            <p>10 mi</p>
+                        </div>
+                    </div>
+
+                    <Radius 
+                    lat={this.props.coords.latitude}
+                    long={this.props.coords.longitude} />
+                </div>
+            :   <div></div>
     }
 }
  
