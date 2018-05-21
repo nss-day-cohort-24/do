@@ -47,16 +47,8 @@ class Cardstack extends Component {
         if (this.state.details) {
             return(
                 <div className="d-flex flex-column">
-
-
-                 <ParkDetails details={this.state.details}/>
-                {/* <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: false })} /> */}
+                    <ParkDetails details={this.state.details} viewCard={this.viewCard}/>
                 </div>
-
-
-
-
-
             )
         } else if (this.state.profile){
             return (
