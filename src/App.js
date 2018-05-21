@@ -44,17 +44,13 @@ class App extends Component {
       authed: false,
     }
 
-    this.logSwipe = this.logSwipe.bind(this);
+    // this.logSwipe = this.logSwipe.bind(this);
     this.getAnAPI = this.getAnAPI.bind(this);
     this.swipeAnAPI = this.swipeAnAPI.bind(this);
     this.changeAuth = this.changeAuth.bind(this);
 
     this.hammer = new Hammer(document.body, {preventDefault: true});
     this.hammer.on('swipe', this.swipeAnAPI);
-  }
-
-  logSwipe(event){
-    console.log(event);
   }
 
   swipeAnAPI(){
@@ -70,10 +66,10 @@ class App extends Component {
   }
 
   changeAuth(user){
-    console.log('run changeAuth function');
     this.setState({
       authed: true,
-      user: user
+      user: user,
+      pickedAnAPI: true
     })
   }
 
@@ -87,17 +83,21 @@ class App extends Component {
     // })
   }
 
-  render() {
-    console.log('auth state 1', this.state.authed);
-    
+  render() {    
     if (!this.state.authed) {
       return(
         <Signin  changeAuth={this.changeAuth}/>
       );
     }
-    else if (this.state.authed) {
+    else if (this.state.authed && this.state.pickedAnAPI) {
       return(
         <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
+      )
+    }else{
+      return(
+      <div>
+        LOADING....
+      </div>
       )
     }
 }
