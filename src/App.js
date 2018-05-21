@@ -47,6 +47,7 @@ class App extends Component {
     this.logSwipe = this.logSwipe.bind(this);
     this.getAnAPI = this.getAnAPI.bind(this);
     this.swipeAnAPI = this.swipeAnAPI.bind(this);
+    this.changeAuth = this.changeAuth.bind(this);
 
     this.hammer = new Hammer(document.body, {preventDefault: true});
     this.hammer.on('swipe', this.swipeAnAPI);
@@ -68,46 +69,28 @@ class App extends Component {
     })
   }
 
-  componentDidMount(){
-    this.getAnAPI();
-    this.authListener = rebase.initializedApp.auth().onAuthStateChanged((user) => {
-        this.setState({
-          authed: true,
-          user: user
-        });
+  changeAuth(){
+    console.log('run changeAuth function');
+    this.setState({
+      authed: true
     })
+  }
+
+  componentDidMount(){
+    // this.getAnAPI();
+    // this.authListener = rebase.initializedApp.auth().onAuthStateChanged((user) => {
+    //     this.setState({
+    //       authed: true,
+    //       user: user
+    //     });
+    // })
   }
 
   render() {
     console.log('auth state 1', this.state.authed);
-    if(this.state.pickedAnAPI && this.state.authed){
-      
-    return (
-      <div>
-        <Signin />
-        {/* <Cardstack /> */}
-
-        {/* <NashvilleOpenData api={this.state.apiNumber} /> */}
-
-        {/* <Geolocated /> */}
-
-
-      </div>
-    )
-  }else if(this.state.pickedAnAPI && !this.state.authed){
     return(
-      <div>
-        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
-        {/* <Geolocated /> */}
-      </div>
-    )
-  }else{
-    return(
-    <div>
-      Loading....
-    </div>
-    )
-  }
+      <Signin  changeAuth={this.changeAuth}/>
+    );
 }
 }
 

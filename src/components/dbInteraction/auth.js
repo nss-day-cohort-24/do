@@ -12,11 +12,13 @@ import { googleProvider, rebase }  from './base';
     return rebase.initializedApp.auth().signOut()
   }
 
-  export function loginWithGoogle () {
+  export function loginWithGoogle (update) {
     return rebase.initializedApp.auth().signInWithPopup(googleProvider)
     .then((data) => {
       console.log('user data', data);
       saveUser(data.user);
+      console.log('has updated?', update());
+      update();
     });
   }
 
