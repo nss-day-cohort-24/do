@@ -83,9 +83,7 @@ class App extends Component {
     if(this.state.pickedAnAPI && !this.state.authed){
     return (
       <div>
-
         <Signin />
-
       </div>
     )
   }else if(this.state.pickedAnAPI && this.state.authed){
