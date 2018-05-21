@@ -7,6 +7,11 @@ import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
+import { SaveObjToFB } from './components/dbInteraction/auth';
+
+const fakeObj = {name: "amber", last: "sharpe"};
+
+SaveObjToFB('commentTEST', fakeObj);
 
 
 var name = "Potters Field";
