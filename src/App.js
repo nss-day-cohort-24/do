@@ -84,13 +84,6 @@ class App extends Component {
     return (
       <div>
         <Signin />
-        {/* <Cardstack /> */}
-
-        {/* <NashvilleOpenData api={this.state.apiNumber} /> */}
-
-        {/* <Geolocated /> */}
-
-
       </div>
     )
   }else if(this.state.pickedAnAPI && this.state.authed){
