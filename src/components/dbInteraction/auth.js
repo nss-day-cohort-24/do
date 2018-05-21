@@ -18,7 +18,7 @@ import { googleProvider, rebase }  from './base';
       console.log('user data', data);
       saveUser(data.user);
       console.log('has updated?', update());
-      update();
+      update(data.user);
     });
   }
 

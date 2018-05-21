@@ -5,9 +5,9 @@ import userCircle from '../images/user-circle.svg';
 
 class TopNav extends Component {
     render() {
-        // const user = this.props.user.providerData[0];
-        // const name = user.displayName;
-        // const profileImg = user.photoURL ? user.photoURL : userCircle;
+        const user = this.props.user.providerData[0];
+        const name = user.displayName;
+        const profileImg = user.photoURL ? user.photoURL : userCircle;
 
         return(
             <React.Fragment>

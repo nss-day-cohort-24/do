@@ -69,10 +69,11 @@ class App extends Component {
     })
   }
 
-  changeAuth(){
+  changeAuth(user){
     console.log('run changeAuth function');
     this.setState({
-      authed: true
+      authed: true,
+      user: user
     })
   }
 
@@ -96,7 +97,7 @@ class App extends Component {
     }
     else if (this.state.authed) {
       return(
-        <NashvilleOpenData api={this.state.apiNumber} />
+        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
       )
     }
 }

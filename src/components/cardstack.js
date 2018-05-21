@@ -1,6 +1,6 @@
 //the parks/events that you swipe through
 import React, { Component } from 'react';
-// import TopNav from './mainParts/top-nav.js';
+import TopNav from './mainParts/top-nav.js';
 import CircleButtons from './mainParts/btn-circles';
 import ParkName from './parkParts/park-name';
 import ParkRating from './parkParts/park-rating';
@@ -36,7 +36,7 @@ class Cardstack extends Component {
         } else {
             return (
                 <div className="d-flex flex-column ml-4">
-                    {/* <TopNav /> */}
+                    <TopNav user={this.props.user}/>
                     <div className="parkcard">
                         <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
