@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { googleProvider, rebase } from './components/signIn/base.js';
+import { googleProvider, rebase } from './components/dbInteraction/base';
 import './App.css';
 import Signin from './components/signIn/signIn';
 import Cardstack from './components/cardstack';
