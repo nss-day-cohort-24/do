@@ -79,8 +79,9 @@ class App extends Component {
   }
 
   render() {
-
-    if(this.state.pickedAnAPI && !this.state.authed){
+    console.log('auth state 1', this.state.authed);
+    if(this.state.pickedAnAPI && this.state.authed){
+      
     return (
       <div>
         <Signin />
@@ -93,7 +94,7 @@ class App extends Component {
 
       </div>
     )
-  }else if(this.state.pickedAnAPI && this.state.authed){
+  }else if(this.state.pickedAnAPI && !this.state.authed){
     return(
       <div>
         <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
