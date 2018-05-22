@@ -3,23 +3,32 @@ import geolib from 'geolib';
 
 
 
-var spots = {
-    "Brandenburg Gate, Berlin": {latitude: 52.516272, longitude: 13.377722},
-    "Dortmund U-Tower": {latitude: 51.515, longitude: 7.453619},
-    "London Eye": {latitude: 51.503333, longitude: -0.119722},
-    "Kremlin, Moscow": {latitude: 55.751667, longitude: 37.617778},
-    "Eiffel Tower, Paris": {latitude: 48.8583, longitude: 2.2945},
-    "Riksdag building, Stockholm": {latitude: 59.3275, longitude: 18.0675},
-    "Royal Palace, Oslo": {latitude: 59.916911, longitude: 10.727567}
-}
-
-// in this case set offset to 1 otherwise the nearest point will always be your reference point
-
 let Radius = (props) => {
-    let sortedDistance = geolib.orderByDistance({latitude: props.lat, longitude: props.long}, spots);  
-    console.log(sortedDistance);
+    let sortedDistance = geolib.orderByDistance({latitude: props.lat, longitude: props.long}, props.array);  
+
+    let oneMile = sortedDistance.filter(place => place.distance <= 1609)
+    console.log('one',oneMile);
+
+    let fiveMile = sortedDistance.filter(place => place.distance <= 8046)
+    console.log('5', fiveMile);
+
+    let tenMile = sortedDistance.filter(place => place.distance <= 16093)
+    console.log('10', tenMile);
     return(
         <div>
+            <div className="d-flex justify-content-center mb-4">
+                <div className="mi-styles mx-3">
+                    <p>1 mi</p>
+                </div>
+
+                <div className="mi-styles mx-3">
+                    <p>5 mi</p>
+                </div>
+                
+                <div className="mi-styles mx-3">
+                    <p>10 mi</p>
+                </div>
+            </div>  
         </div>
     )
 }

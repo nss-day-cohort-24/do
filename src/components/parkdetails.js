@@ -63,6 +63,8 @@
                     <h3>{this.props.name}</h3>
                     <div><ParkAddress address={parkAddress}/></div>
 
+                    <h3>{this.props.name}</h3>
+                    <div><ParkAddress address={parkAddress}/></div>
                     <ParkRating /> 
 
                     <ul id="ameneties-list">
