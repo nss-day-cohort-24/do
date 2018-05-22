@@ -27,10 +27,12 @@ class CircleButtons extends Component {
     console.log("park-name", parkname);
 
     const parkObj = {
-        userUID: {userUID},
-        parkname: {parkname}
+        userUID: userUID,
+        parkname: parkname
     }
     console.log(parkObj)
+
+    SaveObjToFB('matches', parkObj);
 
     function swipeRight() {
  
