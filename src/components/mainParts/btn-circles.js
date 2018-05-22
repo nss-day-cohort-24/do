@@ -21,13 +21,19 @@ class CircleButtons extends Component {
 
     render() {
 
-    const user = this.props.user;
+    const userUID = this.props.user.uid;
     const parkname = this.props.parkname;
-    console.log("circle-user", user);
+    console.log("circle-userUID", userUID);
     console.log("park-name", parkname);
 
-    function greenHeartButton(user, parkname) {
-        SaveObjToFB(user, parkname);
+    const parkObj = {
+        userUID: {userUID},
+        parkname: {parkname}
+    }
+    console.log(parkObj)
+
+    function swipeRight() {
+ 
     }
 
         return (
