@@ -13,7 +13,8 @@
     "react-geolocated": "^2.4.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
-    "react-styleguidist": "^7.0.14"
+    "react-styleguidist": "^7.0.14",
+    "reactstrap": "^6.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
