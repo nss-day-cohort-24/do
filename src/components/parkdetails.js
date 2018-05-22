@@ -3,7 +3,6 @@
     import ReactDOM from 'react-dom';
     import './parkdetails.css';
     import App from'../App';
-    // import ParkName from './parkParts/park-name';
     import ParkRating from './parkParts/park-rating';
     import ParkPic from './parkParts/park1.jpg';
     import ParkAddress from './parkParts/park-address';
@@ -20,26 +19,33 @@
             const allInfo = this.props.allInfo;
             const type = this.props.type;
             const ameneties = [];
-            // const listedAmeneties = [];
+            let listedAmeneties = [];
             console.log("Data type in ParkDetails: ", type);
             console.log("all info", allInfo);
 
-
+            // Checks to see if the data type is a park (parks are the only datasets with ameneties listed)
             if(type === "park" || "parks") {
                 console.log("its a park");
                 console.log("list park ameneties: ", allInfo[0])
                 for(let key in allInfo[0]) {
-
+                    
+                    
+                    // Checks if the amenity is available at the location. AKA if it's key-value is "Yes" 
                     if(allInfo[0][key] === "Yes") {
                         console.log(key);
                         console.log(allInfo[0][key]);
-                        let reformattedAmenety = key.charAt(0).toUpperCase() + key.substr(1).toLowerCase()
-                        ameneties.push(reformattedAmenety.replace(/_|\-/, " "));
+                        // Capitalizes the first character of each amenity
+                        let reformattedAmenety = key.charAt(0).toUpperCase() + key.substr(1).toLowerCase();
+                        
+                        // Replaces all underscores '_' with a space " ".
+                        ameneties.push(reformattedAmenety.replace(/_|\-/g, " "));
                         console.log("ameneties array: ", ameneties);
                     }
                 }
 
-
+                // Converts the ameneties in the 'ameneties' array into JSX list elements.
+                listedAmeneties = ameneties.map(x => <li>{x}</li>);
+                console.log('listedAmeneties',listedAmeneties);
 
 
             }else {
@@ -60,12 +66,7 @@
                     <ParkRating /> 
 
                     <ul>
-                     {/* This is where ameneties should go if type = park. */}
-                     {/* {listedAmeneties} */}
-                        <p>{ameneties}</p>
-                        {/* <ParkDetail detail="This is an amazing park"/>
-                        <ParkDetail detail="There's a dog park nearby"/>
-                        <ParkDetail detail="Has a great big pond in the middle"/> */}
+                        {listedAmeneties}
                     </ul>
                 <div>
                     <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
