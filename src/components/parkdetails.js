@@ -59,10 +59,8 @@
 
                             <img src={ParkPic} alt="park picture" className="detailparkpic" />
 
-                        {/* <h3>{this.props.name}</h3> */}
-                        <h3 className="ml-3">Park Name</h3>
-                        {/* <p><ParkAddress address={parkAddress}/></p> */}
-                        <p><ParkAddress address="Test address"/></p>
+                        <h3>{this.props.name}</h3>
+                        <div><ParkAddress address={parkAddress}/></div>
                         <ParkRating /> 
                         <ul id="ameneties-list">
                             {listedAmeneties}

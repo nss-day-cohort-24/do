@@ -8,10 +8,11 @@ import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
 import { SaveObjToFB } from './components/dbInteraction/auth';
+import SaveComment from './components/dbInteraction/FB-comments';
 
 const fakeObj = {name: "amber", last: "sharpe"};
 
-SaveObjToFB('commentTEST', fakeObj);
+<SaveComment uid="usersid" parkName="Park Name" commentText="This is a new comment." />
 
 
 var name = "Potters Field";
