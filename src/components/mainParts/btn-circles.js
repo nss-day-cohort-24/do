@@ -58,7 +58,7 @@ class CircleButtons extends Component {
                 </div>
                 <div>
                     <button className="smallCircleRightButton">
-                        <img src={marker} alt="blue map marker"/>
+                        <img src={marker} alt="blue map marker" onClick={this.props.viewMap}/>
                     </button>
                 </div>
             </div>
