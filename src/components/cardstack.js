@@ -9,6 +9,7 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
+import MapContainer from './map';
 
 class Cardstack extends Component {
     constructor() {
@@ -44,6 +45,7 @@ class Cardstack extends Component {
         this.setState({
             details: false,
             profile: false,
+            map: false,
         })
     }
 
@@ -64,7 +66,7 @@ class Cardstack extends Component {
             )
         } else if (this.state.map) {
             return (
-                <Map viewCard={this.viewCard}/>
+                <MapContainer viewCard={this.viewCard}/>
             )
         } else {
             return (
