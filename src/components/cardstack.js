@@ -9,6 +9,7 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
+// import FBMatches from './dbInteraction/FB-matches';
 
 class Cardstack extends Component {
     constructor() {
@@ -66,7 +67,7 @@ class Cardstack extends Component {
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
                         <div className='fixed-bottom pb-4 pl-3'>
-                            <CircleButtons user={this.props.user} parkname={this.props.name}/>
+                            <CircleButtons apiAppFunction={this.props.apiAppFunction} openDataApiFunction={this.props.openDataApiFunction} apiNumber={this.props.apiNumber} user={this.props.user} parkname={this.props.name}/>
                         </div>
                     </div>
                 </div>

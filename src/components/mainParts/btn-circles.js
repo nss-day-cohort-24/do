@@ -4,20 +4,20 @@ import heart from '../images/heart.svg';
 import arrow from '../images/undo-alt.svg';
 import marker from '../images/btn-map-marker.svg';
 import './btn-circles.css';
-import { SaveObjToFB  } from '../dbInteraction/auth';
+// import { SaveObjToFB  } from '../dbInteraction/auth';
 
 
 class CircleButtons extends Component {
 
-    // greenHeartButton(user, parkname) {
-    //     console.log(user, parkname);
-    //     // push uid, park name to firebase 
-    //     // calls the next random api   
-    // }
+    greenHeartButton(user, parkname) {
+        console.log(user, parkname);
+        // push uid, park name to firebase 
+        // calls the next random api   
+    }
     
-    // redExButton() {
-    //     // calls the next random api
-    // }
+    redExButton() {
+        // calls the next random api
+    }
 
     render() {
 
@@ -32,9 +32,10 @@ class CircleButtons extends Component {
     }
     console.log(parkObj)
 
-    SaveObjToFB('matches', parkObj);
+    // SaveObjToFB('matches', parkObj);
 
-    function swipeRight() {
+    function clickOnHeartButton(fbFunction) {
+
  
     }
 
@@ -42,7 +43,7 @@ class CircleButtons extends Component {
             <div className="d-flex">
                 <div>
                     <button className="smallCircleLeftButton">
-                        <img src={arrow} alt="yellow circular arrow"/>
+                        <img  src={arrow} alt="yellow circular arrow"/>
                     </button> 
                 </div>
                 <div>   
