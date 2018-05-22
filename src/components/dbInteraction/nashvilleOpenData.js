@@ -84,7 +84,8 @@ class NashvilleOpenData extends Component {
   }else if(this.state.dataLoaded && this.state.dataType === 'history'){
     console.log('got to render in nashvileopendata');
     var dataStuff = this.state.data;
-    return (<CardStack name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} />)
+    console.log("history data", dataStuff);
+    return (<CardStack  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location} />)
   }else if (!this.state.dataLoaded){
       return(
         <div>

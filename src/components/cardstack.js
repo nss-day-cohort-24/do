@@ -21,6 +21,9 @@ class Cardstack extends Component {
         this.toTitleCase = this.toTitleCase.bind(this);
         this.viewProfile = this.viewProfile.bind(this);
         this.viewCard = this.viewCard.bind(this);
+        this.returnInfo = this.returnInfo.bind(this);
+        // this.viewMap = this.viewMap.bind(this);
+
     }
 
     toTitleCase(str) {
@@ -40,16 +43,25 @@ class Cardstack extends Component {
         })
     }
 
+    returnInfo(){
+        console.log("data log function launched");
+        console.log(this.props.location);
+        let allLocationInfo = this.props.info;
+        console.log(allLocationInfo);
+    }
+
 
     render() {
         console.log('what is this?', this.props)
         console.log("cardstack name props", this.props.name);
         console.log("this.props.type", this.props.type);
+        this.returnInfo()
+
         
         if (this.state.details) {
             return(
                 <div className="d-flex flex-column">
-                    <ParkDetails details={this.state.details} viewCard={this.viewCard}/>
+                    <ParkDetails allInfo={this.props.info} name={this.props.name} location={this.props.location} details={this.state.details} viewCard={this.viewCard} type={this.props.type}/>
                 </div>
             )
         } else if (this.state.profile){
