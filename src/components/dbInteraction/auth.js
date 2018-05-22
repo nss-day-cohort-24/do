@@ -12,11 +12,13 @@ import { googleProvider, rebase }  from './base';
     return rebase.initializedApp.auth().signOut()
   }
 
-  export function loginWithGoogle () {
+  export function loginWithGoogle (update) {
     return rebase.initializedApp.auth().signInWithPopup(googleProvider)
     .then((data) => {
       console.log('user data', data);
       saveUser(data.user);
+      console.log('has updated?', update());
+      update(data.user);
     });
   }
 
@@ -45,3 +47,32 @@ import { googleProvider, rebase }  from './base';
             return user;
           })
       }
+
+  export function SaveObjToFB (endpoint, objToSave) { //object  {}, endPoint "endPoint"
+    console.log("object to save:", objToSave);
+    return rebase.post(endpoint, {
+      data: {objToSave}, 
+        then(err) {
+          if(err) {
+            console.log("this is a scary error", err);
+          } else if (!err) {
+            console.log("error free, baby!");
+            console.log(objToSave);
+          }
+        }
+      })
+      .then((result) => {
+        console.log("saved something to firebase and this was the result:", result);
+        return result;
+      })
+  }
+
+  export function deleteFromFB (endpoint) {
+    return rebase.remove(endpoint, function(err){
+      if(err){
+        console.log("this is a scary error", err);
+    } else if (!err) {
+      console.log("deleted item successfully");
+    }
+    })
+  }

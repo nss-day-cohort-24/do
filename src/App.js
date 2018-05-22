@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { googleProvider, rebase } from './components/dbInteraction/base';
 import './App.css';
 import Signin from './components/signIn/signIn';
+import ParkDetails from './components/parkdetails';
 import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
-import { BrowserRouter } from 'react-router-dom';
+import { SaveObjToFB } from './components/dbInteraction/auth';
+
+const fakeObj = {name: "amber", last: "sharpe"};
+
+SaveObjToFB('commentTEST', fakeObj);
 
 
 var name = "Potters Field";
@@ -45,16 +50,14 @@ class App extends Component {
       authed: false,
     }
 
-    this.logSwipe = this.logSwipe.bind(this);
+    // this.logSwipe = this.logSwipe.bind(this);
     this.getAnAPI = this.getAnAPI.bind(this);
     this.swipeAnAPI = this.swipeAnAPI.bind(this);
+    this.changeAuth = this.changeAuth.bind(this);
+    this.logoutApp = this.logoutApp.bind(this);
 
     this.hammer = new Hammer(document.body, {preventDefault: true});
     this.hammer.on('swipe', this.swipeAnAPI);
-  }
-
-  logSwipe(event){
-    console.log(event);
   }
 
   swipeAnAPI(){
@@ -69,40 +72,43 @@ class App extends Component {
     })
   }
 
-  componentDidMount(){
-    this.getAnAPI();
-    this.authListener = rebase.initializedApp.auth().onAuthStateChanged((user) => {
-        this.setState({
-          authed: true,
-          user: user
-        });
+  changeAuth(user){
+    this.setState({
+      authed: true,
+      user: user,
+      pickedAnAPI: true
     })
   }
 
-  render() {
-
-    if(this.state.pickedAnAPI && !this.state.authed){
-    return (
-      <div>
-        <Signin />
-      </div>
-    )
-  }else if(this.state.pickedAnAPI && this.state.authed){
-    return(
-      <BrowserRouter>
-        <div>
-          <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
-          
-        </div>
-      </BrowserRouter>
-    )
-  }else{
-    return(
-    <div>
-      Loading....
-    </div>
-    )
+  logoutApp(){
+    this.setState({
+      authed: false,
+      // user: user,
+      // pickedAnAPI: true
+    })
   }
+
+  componentDidMount(){
+    this.getAnAPI();
+  }
+
+  render() {    
+    if (!this.state.authed) {
+      return(
+        <Signin  changeAuth={this.changeAuth}/>
+      );
+    }
+    else if (this.state.authed && this.state.pickedAnAPI) {
+      return(
+        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} logoutApp={this.logoutApp} />
+      )
+    }else{
+      return(
+      <div>
+        LOADING....
+      </div>
+      )
+    }
 }
 }
 
