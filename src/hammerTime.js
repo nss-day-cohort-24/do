@@ -1,7 +1,6 @@
   // set options to prevent default behaviors for swipe, pinch, etc
 import Hammer from 'hammerjs';
-  
-  
+   
   var options = {
     preventDefault: true
   };

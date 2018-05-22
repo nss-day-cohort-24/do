@@ -9,11 +9,6 @@ import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
 import { SaveObjToFB } from './components/dbInteraction/auth';
 
-const fakeObj = {name: "amber", last: "sharpe"};
-
-SaveObjToFB('commentTEST', fakeObj);
-
-
 var name = "Potters Field";
 //test string for querying database
 var query = `?$where=park_name="${name}"`
@@ -39,7 +34,6 @@ var artAPI =
 
 class App extends Component {
 
-
   constructor(props){
 
     super(props)
@@ -60,9 +54,10 @@ class App extends Component {
     this.hammer.on('swipe', this.swipeAnAPI);
   }
 
-  swipeAnAPI(){
+  swipeAnAPI(event){
     this.setState({pickedAnAPI: false});
     this.getAnAPI();
+    console.log("event", event);
   }
 
   getAnAPI(){
