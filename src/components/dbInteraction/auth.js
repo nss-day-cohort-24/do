@@ -66,3 +66,13 @@ import { googleProvider, rebase }  from './base';
         return result;
       })
   }
+
+  export function deleteFromFB (endpoint) {
+    return rebase.remove(endpoint, function(err){
+      if(err){
+        console.log("this is a scary error", err);
+    } else if (!err) {
+      console.log("deleted item successfully");
+    }
+    })
+  }
