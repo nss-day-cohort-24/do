@@ -1,8 +1,8 @@
 import { googleProvider, rebase }  from './base';
 import { Component } from 'react';
 
-class FBMatches extends Component {
-    SaveObjToFB (endpoint, objToSave, ) { //object  {}, endPoint "endPoint"
+
+    export function SaveObjToFB (endpoint, objToSave, ) { //object  {}, endPoint "endPoint"
     console.log("object to save:", objToSave);
     return rebase.post(endpoint, {
       data: {objToSave}, 
@@ -20,6 +20,4 @@ class FBMatches extends Component {
         return result;
       })
   }
-}
 
-export default FBMatches

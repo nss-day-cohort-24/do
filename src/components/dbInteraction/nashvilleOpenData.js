@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import CardStack from '../cardstack'; 
-import FBMatches from './FB-matches';
-// import Hammer from 'hammerjs';
 
 var name = "Potters Field";
 //test string for querying database
