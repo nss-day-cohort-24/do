@@ -20,7 +20,7 @@ class NashvilleOpenData extends Component {
     }
 }
 
-// function that takes API url and dataType 
+
   getThatAPI(apiNumber){
     switch(apiNumber) {
       case 0:
@@ -28,32 +28,15 @@ class NashvilleOpenData extends Component {
           this.callTheAPI(`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
           break;
       case 1:
-          this.setState({dataType: 'parks', dataLoaded: false})
-          this.callTheAPI(`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
+          this.setState({dataType: 'art',  dataLoaded: false})
+          this.callTheAPI(`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
           break;
       case 2:
-          this.setState({dataType: 'parks', dataLoaded: false})
-          this.callTheAPI(`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
-      break;        
+          this.setState({dataType: 'history',  dataLoaded: false})
+          this.callTheAPI(`https://data.nashville.gov/resource/m4hn-ihe4.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
+        break;         
   }
   }
-
-  // getThatAPI(apiNumber){
-  //   switch(apiNumber) {
-  //     case 0:
-  //         this.setState({dataType: 'parks', dataLoaded: false})
-  //         this.callTheAPI(`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
-  //         break;
-  //     case 1:
-  //         this.setState({dataType: 'art',  dataLoaded: false})
-  //         this.callTheAPI(`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
-  //         break;
-  //     case 2:
-  //         this.setState({dataType: 'history',  dataLoaded: false})
-  //         this.callTheAPI(`https://data.nashville.gov/resource/m4hn-ihe4.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`);
-  //       break;         
-  // }
-  // }
 
   callTheAPI(url){
     fetch(url)

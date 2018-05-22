@@ -65,7 +65,7 @@
 
                     <ParkRating /> 
 
-                    <ul>
+                    <ul id="ameneties-list">
                         {listedAmeneties}
                     </ul>
                 <div>
@@ -93,6 +93,7 @@
                     <div>
                         <img src={this.props.userImage} />
                     </div>
+                    
                     <div id={this.props.commentID}>
                         <p>{this.props.commentText}</p>
                     </div>
