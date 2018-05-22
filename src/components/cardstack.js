@@ -10,6 +10,8 @@ import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
 
+var picture;
+
 class Cardstack extends Component {
     constructor() {
         super()
@@ -55,11 +57,16 @@ class Cardstack extends Component {
             <Profile user={this.props.user} viewCard={this.viewCard} logoutApp={this.props.logoutApp}/>
             )
         } else {
+            if(this.props.type === 'art'){
+                picture = this.props.picture;
+            }else{
+                picture = ParkPic;
+            }
             return (
                 <div className="d-flex flex-column ml-4">
                     <TopNav user={this.props.user} viewProfile={this.viewProfile} />
                     <div className="parkcard">
-                        <img src={ParkPic} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
+                        <img src={picture} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
                         <h3 className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
