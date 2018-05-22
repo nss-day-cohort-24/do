@@ -48,10 +48,10 @@ import { googleProvider, rebase }  from './base';
           })
       }
 
-  export function SaveObjToFB (endpoint, objToSave) { //object  {}, endPoint "endPoint"
+  export function SaveObjToFB (endpoint, objToSave) { //object  {}, endPoint "endPoint" example: for users endpoint type "users"
     console.log("object to save:", objToSave);
     return rebase.post(endpoint, {
-      data: {objToSave}, 
+      data: objToSave, 
         then(err) {
           if(err) {
             console.log("this is a scary error", err);
@@ -67,8 +67,8 @@ import { googleProvider, rebase }  from './base';
       })
   }
 
-  export function deleteFromFB (endpoint) {
-    return rebase.remove(endpoint, function(err){
+  export function DeleteFromFB (endpoint, itemID) { //example "users" endpoint and itemID of specific user "userid"
+    return rebase.remove(endpoint + "/" + itemID, function(err){
       if(err){
         console.log("this is a scary error", err);
     } else if (!err) {
