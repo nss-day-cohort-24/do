@@ -6,6 +6,7 @@ import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
+import { BrowserRouter } from 'react-router-dom';
 
 
 var name = "Potters Field";
@@ -88,10 +89,12 @@ class App extends Component {
     )
   }else if(this.state.pickedAnAPI && this.state.authed){
     return(
-      <div>
-
-        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
-      </div>
+      <BrowserRouter>
+        <div>
+          <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} />
+          
+        </div>
+      </BrowserRouter>
     )
   }else{
     return(
