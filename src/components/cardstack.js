@@ -9,7 +9,6 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
-// import FBMatches from './dbInteraction/FB-matches';
 
 class Cardstack extends Component {
     constructor() {
