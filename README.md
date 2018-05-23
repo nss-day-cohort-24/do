@@ -23,9 +23,8 @@ the locator.
 ![logo placeholder](ReadmeFiles/1.png "Logo placeholder")
 <br />
 <br />
+![Final Prototype](ReadmeFiles/dosmaller.gif)
 the final.
-
-![Final Prototype](ReadmeFiles/do.gif)
 
 # MVP goals.
 1. Authenticate user with Google Auth
