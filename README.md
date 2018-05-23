@@ -47,9 +47,9 @@ the final.
 
 # how to view this app.
 1. Clone the do. repository
-1. npm install
-1. run 'npx styleguidist server' to view our component style guide
-1. run npm start to view the project
+1. npm install to get your node_modules up and kickin' (they're gonna make this work)
+1. run 'npx styleguidist server' from your terminal to view our component style guide 
+1. run 'npm start' from your terminal to to view the project from your local server
 1. happy hacking! 
 
 
