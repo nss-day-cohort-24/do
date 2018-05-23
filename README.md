@@ -24,7 +24,8 @@ the locator.
 <br />
 <br />
 the final.
-[![Final Prototype](ReadmeFiles/home.png) https://www.youtube.com/watch?v=9UZHcq_YaeY&feature=youtu.be]
+
+![Final Prototype](ReadmeFiles/do.gif)
 
 # MVP goals.
 1. Authenticate user with Google Auth
