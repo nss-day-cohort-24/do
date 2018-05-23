@@ -21,3 +21,13 @@ import { Component } from 'react';
       })
   }
 
+  export function DeleteFromFB (endpoint, itemID) { //example "users" endpoint and itemID of specific user "userid"
+    return rebase.remove(endpoint + "/" + itemID, function(err){
+      if(err){
+        console.log("this is a scary error", err);
+    } else if (!err) {
+      console.log("deleted item successfully");
+    }
+    })
+  }
+
