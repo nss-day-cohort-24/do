@@ -29,12 +29,17 @@ import { rebase }  from './base';
     })
   }
 
-  export function GetFromFB (endpoint, itemID){
-    return rebase.fetch('sales', {
-    }).then(data => {
-      // console.log(data);
-    }).catch(error => {
-      //handle error
+  export function GetFromFB (endpoint){
+    console.log('Getting Stuff from FB:', endpoint);
+    return rebase.fetch(endpoint, {
+      context: this,
+      asArray: true, 
+      then(data) {
+        let myObj = JSON.stringify(data);
+        console.log('Has data?',  myObj);
+        return myObj;
+      }
+
     })
   }
 
