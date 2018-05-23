@@ -4,8 +4,8 @@ import { Component } from 'react';
 
     export function SaveObjToFB (endpoint, objToSave, ) { //object  {}, endPoint "endPoint"
     console.log("object to save:", objToSave);
-    return rebase.post(endpoint, {
-      data: {objToSave}, 
+    return rebase.push(endpoint, {
+      data: objToSave, 
         then(err) {
           if(err) {
             console.log("this is a scary errs", err);

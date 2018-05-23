@@ -69,7 +69,7 @@ class NashvilleOpenData extends Component {
   if(this.state.dataLoaded  && this.state.dataType === 'parks'){
     console.log('got to render in nashvileopendata');
   var dataStuff = this.state.data;
-      return (<CardStack name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} />)
+      return (<CardStack dataType={this.state.dataType} name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} />)
       
 
   // print art
@@ -83,7 +83,7 @@ class NashvilleOpenData extends Component {
     console.log('got to render in nashvileopendata');
     var dataStuff = this.state.data;
     console.log("history data", dataStuff);
-    return (<CardStack  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location} />)
+    return (<CardStack dataType={this.state.dataType}  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location} />)
   }else if (!this.state.dataLoaded){
       return(
         <div>
