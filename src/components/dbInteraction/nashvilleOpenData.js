@@ -90,7 +90,6 @@ if(this.state.dataLoaded  && this.state.dataType === 'parks'){
       <div>
         Loading....
       </div>
-
         )
       }
 }
