@@ -3,7 +3,7 @@ import './profile.css';
 import { logout } from './dbInteraction/auth';
 import logo from './images/doLogo.png';
 import Geolocated from './signIn/geolocated';
-import { FavePark } from './parkParts/profile-matches';
+// import { FavePark } from './parkParts/profile-matches';
 import { GetFromFB } from './dbInteraction/FB-function';
 
 
@@ -60,7 +60,7 @@ class Profile extends React.Component {
                 </div>
 
                 <div className="d-flex flex-column justify-content-center">
-                    <img className="main-profile-pic mx-auto" alt="user profile image" src={profileImg}/>
+                    <img className="main-profile-pic mx-auto" alt="user profile" src={profileImg}/>
                     <h2 className="user-name-styles mt-3 mb-5">hey, {name}!</h2>
 
                     <Geolocated />

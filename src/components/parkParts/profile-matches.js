@@ -8,7 +8,7 @@ export class FavePark extends React.Component {
     render() {
         console.log('A new fave park was added');
         const parkid = this.props.parkName;
-        let address = this.props.address;
+        // let address = this.props.address;
         let userid = this.props.uid;
         let deleteComment = (parkname, uid) => { DeleteFromFB(parkname, uid)};
         return (
@@ -19,18 +19,18 @@ export class FavePark extends React.Component {
                     <ParkRating /> 
                 </div>
                 <div>
-                    <img src="#" onClick={deleteComment(parkid, userid)} />
+                    <img src="#" onClick={deleteComment(parkid, userid)} alt=""/>
                 </div>
             </div>
         )
     }
 }
 
-class DeleteButton extends React.Component {
-    render() {
-        return (
-        <div>
-            <img src="#" onClick={DeleteFromFB(this.props.parkName, this.props.userid)} alt="parkpic"/>
-        </div>
-    )}
-}
+// class DeleteButton extends React.Component {
+//     render() {
+//         return (
+//         <div>
+//             <img src="#" onClick={DeleteFromFB(this.props.parkName, this.props.userid)} alt="parkpic"/>
+//         </div>
+//     )}
+// }

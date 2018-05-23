@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
-import { googleProvider, rebase } from './components/dbInteraction/base';
+// import { googleProvider, rebase } from './components/dbInteraction/base';
 import './App.css';
 import Signin from './components/signIn/signIn';
-import ParkDetails from './components/parkdetails';
-import Cardstack from './components/cardstack';
+// import ParkDetails from './components/parkdetails';
+// import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
-import Geolocated from './components/signIn/geolocated';
+// import Geolocated from './components/signIn/geolocated';
 
 
-var name = "Potters Field";
+// var name = "Potters Field";
 //test string for querying database
-var query = `?$where=park_name="${name}"`
+// var query = `?$where=park_name="${name}"`
 
-var parksAPI = 
-{
-  link:`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-  type: 'parks'
-}
+// var parksAPI = 
+// {
+//   link:`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
+//   type: 'parks'
+// }
 
-var historyAPI = 
-{
-  link:`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-  type: 'history'
-};
+// var historyAPI = 
+// {
+//   link:`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
+//   type: 'history'
+// };
 
-var artAPI = 
-{
-  link: `https://data.nashville.gov/resource/xakp-ess3.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-  type: 'art'
-};
+// var artAPI = 
+// {
+//   link: `https://data.nashville.gov/resource/xakp-ess3.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
+//   type: 'art'
+// };
 
 
 class App extends Component {
