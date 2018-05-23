@@ -15,11 +15,11 @@ class CircleButtons extends Component {
         super(props)
 
         this.favoriteAPlace = this.favoriteAPlace.bind(this);
+        this.newPoiFunction = this.newPoiFunction.bind(this);
     }
 
 
     favoriteAPlace(){
-
         type = this.props.type;
         user = this.props.user.uid;
         poi = this.props.parkname;
@@ -37,6 +37,11 @@ class CircleButtons extends Component {
         newPoi();
     }
 
+    newPoiFunction(){
+        newPoi = this.props.newPoi;
+        newPoi()
+    }
+
 
 
     render() {
@@ -50,7 +55,7 @@ class CircleButtons extends Component {
                 </div>
                 <div>   
                     <button className="largeCircleButton">
-                        <img src={times} alt="red letter X"/>    
+                        <img onClick={this.newPoiFunction} src={times} alt="red letter X"/>    
                     </button>
                 </div>
                 <div>
