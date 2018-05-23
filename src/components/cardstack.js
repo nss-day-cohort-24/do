@@ -9,6 +9,7 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
+import Map from './map.js';
 
 class Cardstack extends Component {
     constructor() {
@@ -21,7 +22,7 @@ class Cardstack extends Component {
         this.viewProfile = this.viewProfile.bind(this);
         this.viewCard = this.viewCard.bind(this);
         this.returnInfo = this.returnInfo.bind(this);
-        // this.viewMap = this.viewMap.bind(this);
+        this.viewMap = this.viewMap.bind(this);
 
     }
 
@@ -39,6 +40,13 @@ class Cardstack extends Component {
         this.setState({
             details: false,
             profile: false,
+            map: false,
+        })
+    }
+
+    viewMap() {
+        this.setState({
+            map: true,
         })
     }
 
@@ -67,6 +75,10 @@ class Cardstack extends Component {
             return (
             <Profile user={this.props.user} viewCard={this.viewCard} logoutApp={this.props.logoutApp}/>
             )
+        } else if(this.state.map){
+            return (
+                <Map viewCard={this.viewCard} />
+            )
         } else {
             return (
                 <div className="d-flex flex-column ml-4">
@@ -78,7 +90,7 @@ class Cardstack extends Component {
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
                         <div className='fixed-bottom pb-4 pl-3'>
-                            <CircleButtons apiAppFunction={this.props.apiAppFunction} openDataApiFunction={this.props.openDataApiFunction} apiNumber={this.props.apiNumber} user={this.props.user} parkname={this.props.name}/>
+                            <CircleButtons viewMap={this.viewMap} apiAppFunction={this.props.apiAppFunction} openDataApiFunction={this.props.openDataApiFunction} apiNumber={this.props.apiNumber} user={this.props.user} parkname={this.props.name}/>
                         </div>
                     </div>
                 </div>
