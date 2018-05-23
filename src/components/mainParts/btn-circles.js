@@ -7,7 +7,7 @@ import './btn-circles.css';
 import { SaveObjToFB  } from '../dbInteraction/FB-function';
 
 
-var user, poi, type;
+var user, poi, type, newPoi;
 
 class CircleButtons extends Component {
 
@@ -23,6 +23,7 @@ class CircleButtons extends Component {
         type = this.props.type;
         user = this.props.user.uid;
         poi = this.props.parkname;
+        newPoi = this.props.newPoi;
 
         var FBObj = {
             userUID : user,
@@ -32,6 +33,8 @@ class CircleButtons extends Component {
 
         console.log('trying to favorite a place', user, poi,type);
         SaveObjToFB("favorites", FBObj);
+
+        newPoi();
     }
 
 
