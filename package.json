@@ -2,6 +2,7 @@
   "name": "do",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://nss-day-cohort-24.github.io/do",
   "dependencies": {
     "google-maps-react": "^2.0.2",
     "bootstrap": "^4.1.1",
@@ -17,6 +18,8 @@
     "reactstrap": "^6.0.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -24,6 +27,7 @@
   },
   "devDependencies": {
     "react-styleguidist": "^7.0.14",
+    "gh-pages": "^1.1.0",
     "webpack": "^3.12.0",
     "google-maps": "^3.2.1"
   }
