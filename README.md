@@ -23,7 +23,8 @@ the locator.
 ![logo placeholder](ReadmeFiles/1.png "Logo placeholder")
 <br />
 <br />
-![Final Prototype](ReadmeFiles/dosmaller.gif)
+![Final Prototype](ReadmeFiles/do.gif)
+<br />
 the final.
 
 # MVP goals.
@@ -42,6 +43,8 @@ the final.
 1. When set in profile, the user can select to only see matches in ~1 mile, ~5 miles, ~10 miles
 1. Return to last card button functionality
 1. Images for parks and history, most ideally supported by Nashville Open Data API
+1. User feedback for matches added 
+1. User feedback for comments added
 
 
 # how to view this app.
