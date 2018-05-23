@@ -11,7 +11,7 @@ export class FavePark extends React.Component {
         return (
             <div>
                 <div className="favePark">
-                    <h3 className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
+                    {/* <h3 className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3> */}
                     <p><ParkAddress address="Test address"/></p>
                     <ParkRating /> 
                 </div>
@@ -25,7 +25,7 @@ class DeleteButton extends React.Component {
     render() {
         return (
         <div>
-            <img src="#" onClick={DeleteFromFB(this.props.parkName, this.props.userid)} />
+            <img src="#" onClick={DeleteFromFB(this.props.parkName, this.props.userid)} alt="parkpic"/>
         </div>
     )}
 }

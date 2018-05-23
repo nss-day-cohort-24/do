@@ -14,7 +14,7 @@ import Hammer from 'hammerjs';
   hammer.on("swipe", swiped);
 
   function swiped (event){
-      console.log(event);
+      // console.log(event);
       return Math.floor(Math.random() * 3);
   }
 
