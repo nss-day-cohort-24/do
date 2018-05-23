@@ -1,6 +1,4 @@
-import { googleProvider, rebase }  from './base';
-import { Component } from 'react';
-
+import { rebase }  from './base';
 
     export function SaveObjToFB (endpoint, objToSave, ) { //object  {}, endPoint "endPoint"
     console.log("object to save:", objToSave);
