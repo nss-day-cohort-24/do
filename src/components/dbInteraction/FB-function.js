@@ -32,11 +32,12 @@ import { Component } from 'react';
   }
 
   export function GetFromFB (endpoint, itemID){
-    return rebase.fetch('sales', {
-    }).then(data => {
-      console.log(data);
-    }).catch(error => {
-      //handle error
+    return rebase.fetch(endpoint, {
+      context: this,
+      asArray: true, 
+      then(data) {
+        console.log(data);
+      }
     })
   }
 
