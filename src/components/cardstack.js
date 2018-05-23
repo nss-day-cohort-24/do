@@ -69,9 +69,14 @@ class Cardstack extends Component {
 
         
         if (this.state.details) {
+            if (this.props.type === 'art') {
+                picture = this.props.picture;
+            } else {
+                picture = ParkPic;
+            }
             return(
                 <div className="d-flex flex-column">
-                    <ParkDetails allInfo={this.props.info} name={this.props.name} location={this.props.location} details={this.state.details} viewCard={this.viewCard} type={this.props.type} uid={this.props.user.uid}/>
+                    <ParkDetails picture={picture} allInfo={this.props.info} name={this.props.name} location={this.props.location} details={this.state.details} viewCard={this.viewCard} type={this.props.type} uid={this.props.user.uid}/>
                 </div>
             )
         } else if (this.state.profile){
