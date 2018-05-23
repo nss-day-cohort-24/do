@@ -111,6 +111,7 @@
                         <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
                     </form>
                     <div>
+                        <h3 className="text-center">Comments</h3>
                         <ParkComments
                         name={this.props.name} 
                         userImage={this.props.userImage}
