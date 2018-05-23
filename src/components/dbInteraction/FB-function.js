@@ -31,12 +31,15 @@ import { Component } from 'react';
     })
   }
 
-  export function GetFromFB (endpoint, itemID){
+  export function GetFromFB (endpoint){
+    console.log('Getting Stuff from FB:', endpoint);
     return rebase.fetch(endpoint, {
       context: this,
       asArray: true, 
       then(data) {
-        console.log(data);
+        let myObj = JSON.stringify(data);
+        console.log('Has data?',  myObj);
+        return myObj;
       }
     })
   }

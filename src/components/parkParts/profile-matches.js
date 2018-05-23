@@ -6,6 +6,7 @@ import {DeleteFromFB} from '../dbInteraction/FB-function';
 export class FavePark extends React.Component {
     
     render() {
+        console.log('A new fave park was added');
         const parkid = this.props.parkName;
         let address = this.props.address;
         let userid = this.props.uid;
@@ -14,7 +15,7 @@ export class FavePark extends React.Component {
             <div>
                 <div className="favePark">
                     <h3 className="pt-2 pr-2 pl-2">{parkid}</h3>
-                    <ParkAddress address={address}/>
+                    <ParkAddress address={"Test address"}/>
                     <ParkRating /> 
                 </div>
                 <div>
