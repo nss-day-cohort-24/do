@@ -1,6 +1,8 @@
 
 ![logo placeholder](ReadmeFiles/doLogo.png "Logo placeholder")
 
+[Checkout our Beta Version of do. here!](https://nss-day-cohort-24.github.io/do/)
+
 Day Out, or do., is a Tinder style app that allows users to "match" with new points of interest in the Nashville area. Using data from data.nashville.gov, do. pulls from Nashville's Public Art, Historical Markers, and Parks data. 
 
 # our user.
@@ -38,6 +40,7 @@ the final.
 1. User can swipe to quickly pass through card
 1. Return to last card button functionality
 1. User can view a profile to see their Google user image, set their radius, and view their matches
+1. Deploy app
 
 # stretch goals.
 1. Add user image to comments
