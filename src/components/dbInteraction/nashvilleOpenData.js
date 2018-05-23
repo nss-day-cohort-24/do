@@ -65,30 +65,32 @@ class NashvilleOpenData extends Component {
   render() {  
 
 
-  //print parks
-  if(this.state.dataLoaded  && this.state.dataType === 'parks'){
-    console.log('got to render in nashvileopendata');
+//print parks
+if(this.state.dataLoaded  && this.state.dataType === 'parks'){
+  console.log("park api");
   var dataStuff = this.state.data;
-      return (<CardStack name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} />)
-      
+  console.log("parks data", dataStuff);
+    return (<CardStack  info={dataStuff} name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].mapped_location_address}/>)
 
-  // print art
-  }else if(this.state.dataLoaded && this.state.dataType === 'art'){
-    console.log('got to render in nashvileopendata');
-    var dataStuff = this.state.data;
-    return (<CardStack name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp}/>)
+// print art
+}else if(this.state.dataLoaded && this.state.dataType === 'art'){
+  console.log("art api");
+  var dataStuff = this.state.data;
+  console.log("art data", dataStuff);
+  return (<CardStack  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location}/>)
 
-  //print history
-  }else if(this.state.dataLoaded && this.state.dataType === 'history'){
-    console.log('got to render in nashvileopendata');
-    var dataStuff = this.state.data;
-    console.log("history data", dataStuff);
-    return (<CardStack  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location} />)
-  }else if (!this.state.dataLoaded){
-      return(
-        <div>
-          Loading....
-        </div>
+//print history
+}else if(this.state.dataLoaded && this.state.dataType === 'history'){
+  console.log("history api");
+  var dataStuff = this.state.data;
+  console.log("history data", dataStuff);
+  return (<CardStack  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location} />)
+}else if (!this.state.dataLoaded){
+    return(
+      <div>
+        Loading....
+      </div>
+
         )
       }
 }
