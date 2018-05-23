@@ -40,6 +40,7 @@ the final.
 1. User can view a profile to see their Google user image, set their radius, and view their matches
 
 # stretch goals.
+1. Add user image to comments
 1. Include Google Maps API to show location of POI on maps
 1. When set in profile, the user can select to only see matches in ~1 mile, ~5 miles, ~10 miles
 1. Images for parks and history, most ideally supported by Nashville Open Data API
@@ -49,6 +50,7 @@ the final.
 
 
 # how to view this app.
+1. Have a Google Account (this is based on Google auth)
 1. Clone the do. repository
 1. npm install to get your node_modules up and kickin' (they're gonna make this work)
 1. run 'npx styleguidist server' from your terminal to view our component style guide 
