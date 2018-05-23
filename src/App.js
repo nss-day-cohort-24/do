@@ -7,6 +7,7 @@ import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Geolocated from './components/signIn/geolocated';
 
+
 var name = "Potters Field";
 //test string for querying database
 var query = `?$where=park_name="${name}"`
