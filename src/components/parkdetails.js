@@ -19,14 +19,24 @@
             this.setState({value: event.target.value});
         }
 
+        // Called when user clicks 'Submit' on the comment form.
         handleSubmit = (event) => {
             console.log('uid props:', this.props.uid);
             this.CommentToSave(this.props.uid, this.props.name, this.state.value);
             console.log('A comment was gotten:' + this.state.value);
+            // document.getElementById("comment-form").reset();
             event.preventDefault();
-        }
+            console.log("event.target: ", event.target);
+            event.target.value = "";
+            // event.target.reset();
+            // this.refs.form.reset();
+            console.log("is process getting here?");
+            // need to clear the comment input field after the user submits comment
+            this.setState({
+                value: ""
+            })
 
-        
+        }
 
        CommentToSave = (uid, parkName, commentText) => {
            console.log('uid to save', uid);
@@ -35,7 +45,7 @@
             parkName : parkName,
             commentString : commentText
           };
-            SaveObjToFB('comments', commentObj)
+            SaveObjToFB('comments', commentObj);
         }
 
         render() {
@@ -44,38 +54,35 @@
             const type = this.props.type;
             const ameneties = [];
             let listedAmeneties = [];
-            console.log("Data type in ParkDetails: ", type);
-            console.log("all info", allInfo);
+            // console.log("Data type in ParkDetails: ", type);
+            // console.log("all info", allInfo);
 
             // Checks to see if the data type is a park (parks are the only datasets with ameneties listed)
             if(type === "park" || "parks") { 
-                console.log("its a park");
-                console.log("list park ameneties: ", allInfo[0])
+                // console.log("its a park");
+                // console.log("list park ameneties: ", allInfo[0]);
                 for(let key in allInfo[0]) {
                     
                     
-                    // Checks if the amenity is available at the location. AKA if it's key-value is "Yes" 
+                    // Checks if the amenity is available at the current location. AKA if it's key-value is "Yes" 
                     if(allInfo[0][key] === "Yes") {
-                        console.log(key);
-                        console.log(allInfo[0][key]);
+                        // console.log(key);
+                        // console.log(allInfo[0][key]);
                         // Capitalizes the first character of each amenity
                         let reformattedAmenety = key.charAt(0).toUpperCase() + key.substr(1).toLowerCase();
                         
                         // Replaces all underscores '_' with a space " ".
                         ameneties.push(reformattedAmenety.replace(/_|\-/g, " "));
-                        console.log("ameneties array: ", ameneties);
+                        // console.log("ameneties array: ", ameneties);
                     }
                 }
 
                 // Converts the ameneties in the 'ameneties' array into JSX list elements.
-                listedAmeneties = ameneties.map(x => <li>{x}</li>);
-                console.log('listedAmeneties',listedAmeneties);
+                listedAmeneties = ameneties.map(x => <li key={x}>{x}</li>);
+                // console.log('listedAmeneties',listedAmeneties);
 
 
-            }else {
-                console.log("its not a park");
             }
-
 
             return (
                 <div>
@@ -92,14 +99,14 @@
                             {listedAmeneties}
                         </ul>
                     </div>
-                    <form onSubmit={this.handleSubmit}>
+                    <form ref="form" id="comment-form" onSubmit={this.handleSubmit}>
                         <label htmlFor="Textarea1">Make a Comment</label>
-                        <textarea className="form-control" id="Textarea1" rows="3" value={this.state.value} onChange={this.handleChange}></textarea>
-                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                        <input type="textarea" className="form-control" id="Textarea1" rows="3" value={this.state.value} onChange={this.handleChange}/>
+                        <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
                     </form>
                     <div>
-                        <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
-                        <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." />
+                        {/* <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
+                        <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." /> */}
                     </div>
                 </div>
             );
