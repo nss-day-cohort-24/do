@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { loginWithGoogle, logout  } from '../dbInteraction/auth';
-import { rebase } from '../dbInteraction/base';
+import { loginWithGoogle } from '../dbInteraction/auth';
 import '../../../node_modules/bootstrap/dist/css/bootstrap.css';
-import Geolocated from './geolocated';
 import logo from './doLogo.png';
 import GoogleBtn from './btn_google_signin_dark_normal_web.png';
 import './signIn.css';
