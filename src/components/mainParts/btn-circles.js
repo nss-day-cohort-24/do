@@ -7,7 +7,7 @@ import './btn-circles.css';
 import { SaveObjToFB  } from '../dbInteraction/FB-function';
 
 
-var user, poi, type, newPoi;
+var user, poi, type, newPoi, showLastLocation;
 
 class CircleButtons extends Component {
 
@@ -16,8 +16,13 @@ class CircleButtons extends Component {
 
         this.favoriteAPlace = this.favoriteAPlace.bind(this);
         this.newPoiFunction = this.newPoiFunction.bind(this);
+        this.showLast = this.showLast.bind(this);
     }
 
+    showLast(){
+        showLastLocation = this.props.showLast;
+        showLastLocation();
+    }
 
     favoriteAPlace(){
         type = this.props.type;
@@ -31,7 +36,7 @@ class CircleButtons extends Component {
             type: type
         }
 
-        console.log('trying to favorite a place', user, poi,type);
+        // console.log('trying to favorite a place', user, poi,type);
         SaveObjToFB("favorites", FBObj);
 
         newPoi();
@@ -50,7 +55,7 @@ class CircleButtons extends Component {
             <div className="d-flex">
                 <div>
                     <button className="smallCircleLeftButton">
-                        <img  src={arrow} alt="yellow circular arrow"/>
+                        <img  onClick={this.showLast} src={arrow} alt="yellow circular arrow"/>
                     </button> 
                 </div>
                 <div>   

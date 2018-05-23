@@ -25,3 +25,12 @@ export class FavePark extends React.Component {
         )
     }
 }
+
+class DeleteButton extends React.Component {
+    render() {
+        return (
+        <div>
+            <img src="#" onClick={DeleteFromFB(this.props.parkName, this.props.userid)} alt="parkpic"/>
+        </div>
+    )}
+}

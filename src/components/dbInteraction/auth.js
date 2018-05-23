@@ -7,9 +7,9 @@ import { googleProvider, rebase }  from './base';
   export function loginWithGoogle (update) {
     return rebase.initializedApp.auth().signInWithPopup(googleProvider)
     .then((data) => {
-      console.log('user data', data);
+      // console.log('user data', data);
       saveUser(data.user);
-      console.log('has updated?', update());
+      // console.log('has updated?', update());
       update(data.user);
     });
   }
@@ -25,7 +25,7 @@ import { googleProvider, rebase }  from './base';
     }
 
     export function saveUser (user) {
-        console.log("save user", user);
+        // console.log("save user", user);
         return rebase.initializedApp.database().ref().child(`users/${user.uid}`)
           .update({
             email: user.email,

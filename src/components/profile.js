@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './profile.css';
 import { logout } from './dbInteraction/auth';
 import logo from './images/doLogo.png';

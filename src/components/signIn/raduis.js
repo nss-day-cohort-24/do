@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import geolib from 'geolib';
 
 
@@ -7,13 +7,13 @@ let Radius = (props) => {
     let sortedDistance = geolib.orderByDistance({latitude: props.lat, longitude: props.long}, props.array);  
 
     let oneMile = sortedDistance.filter(place => place.distance <= 1609)
-    console.log('one',oneMile);
+    // console.log('one',oneMile);
 
     let fiveMile = sortedDistance.filter(place => place.distance <= 8046)
-    console.log('5', fiveMile);
+    // console.log('5', fiveMile);
 
     let tenMile = sortedDistance.filter(place => place.distance <= 16093)
-    console.log('10', tenMile);
+    // console.log('10', tenMile);
     return(
         <div>
             <div className="d-flex justify-content-center mb-4">
