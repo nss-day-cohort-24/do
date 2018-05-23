@@ -24,8 +24,7 @@ the locator.
 <br />
 <br />
 the final.
-[![Final Prototype](ReadmeFiles/home.png)]
-(https://www.youtube.com/watch?v=9UZHcq_YaeY&feature=youtu.be)
+[![Final Prototype](ReadmeFiles/home.png) https://www.youtube.com/watch?v=9UZHcq_YaeY&feature=youtu.be]
 
 # MVP goals.
 1. Authenticate user with Google Auth
@@ -35,16 +34,22 @@ the final.
 1. On details page the user can leave a comment about the location
 1. From card view, the user can "match" with data and save it to associate with their user data - then next POI shows
 1. User can pass on data and next POI shows
-1. User can swipe left to pass
-1. User can swipe right to "match"
+1. User can swipe to quickly pass through cards
 1. User can view a profile to see their Google user image, set their radius, and view their matches
-1. When set in profile, the user can select to only see matches in ~1 mile, ~5 miles, ~10 miles
 
 # stretch goals.
 1. Include Google Maps API to show location of POI on maps
+1. When set in profile, the user can select to only see matches in ~1 mile, ~5 miles, ~10 miles
+1. Return to last card button functionality
+1. Images for parks and history, most ideally supported by Nashville Open Data API
 
 
 # how to view this app.
+1. Clone the do. repository
+1. npm install
+1. run 'npx styleguidist server' to view our component style guide
+1. run npm start to view the project
+1. happy hacking! 
 
 
 # technologies.
