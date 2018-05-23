@@ -21,16 +21,16 @@
 
         // Called when user clicks 'Submit' on the comment form.
         handleSubmit = (event) => {
-            console.log('uid props:', this.props.uid);
+            // console.log('uid props:', this.props.uid);
             this.CommentToSave(this.props.uid, this.props.name, this.state.value);
-            console.log('A comment was gotten:' + this.state.value);
+            // console.log('A comment was gotten:' + this.state.value);
             // document.getElementById("comment-form").reset();
             event.preventDefault();
-            console.log("event.target: ", event.target);
+            // console.log("event.target: ", event.target);
             event.target.value = "";
             // event.target.reset();
             // this.refs.form.reset();
-            console.log("is process getting here?");
+            // console.log("is process getting here?");
             // need to clear the comment input field after the user submits comment
             this.setState({
                 value: ""
@@ -39,7 +39,7 @@
         }
 
        CommentToSave = (uid, parkName, commentText) => {
-           console.log('uid to save', uid);
+        //    console.log('uid to save', uid);
            const commentObj = {
             userID : uid,
             parkName : parkName,

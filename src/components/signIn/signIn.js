@@ -22,9 +22,9 @@ const styles = {
 class Signin extends Component {
 
     authenticate(){
-        console.log('App: calling autheticate for google');
+        // console.log('App: calling autheticate for google');
         const updateIt = this.props.changeAuth;
-        console.log('updateIt is:', updateIt);
+        // console.log('updateIt is:', updateIt);
         loginWithGoogle(updateIt);
         
     }

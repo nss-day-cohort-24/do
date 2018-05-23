@@ -53,23 +53,23 @@ class Cardstack extends Component {
     }
 
     returnInfo(){
-        console.log("data log function launched");
-        console.log(this.props.location);
+        // console.log("data log function launched");
+        // console.log(this.props.location);
         let allLocationInfo = this.props.info;
-        console.log("this.props.info", this.props.info);
-        console.log("allLocationInfo", allLocationInfo);
+        // console.log("this.props.info", this.props.info);
+        // console.log("allLocationInfo", allLocationInfo);
     }
 
 
     render() {
-        console.log('what is this?', this.props)
-        console.log("cardstack name props", this.props.name);
-        console.log("this.props.type", this.props.type);
+        // console.log('what is this?', this.props)
+        // console.log("cardstack name props", this.props.name);
+        // console.log("this.props.type", this.props.type);
         this.returnInfo()
 
         
         if (this.state.details) {
-            if (this.props.type === 'art') {
+            if (this.props.type === 'art' && this.props.picture) {
                 picture = this.props.picture;
             } else {
                 picture = ParkPic;
@@ -88,7 +88,7 @@ class Cardstack extends Component {
                 <Map viewCard={this.viewCard} />
             )
         } else {
-            if(this.props.type === 'art'){
+            if(this.props.type === 'art' && this.props.picture){
                 picture = this.props.picture;
             }else{
                 picture = ParkPic;
