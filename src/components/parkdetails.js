@@ -8,6 +8,12 @@
     import ParkAddress from './parkParts/park-address';
     import CardStack from './cardstack';
     import { SaveObjToFB } from './dbInteraction/FB-function';
+    import ParkComments from './parkComments';
+
+
+
+
+
     class ParkDetails extends Component {
        
         constructor(props) {
@@ -92,7 +98,7 @@
 
                             <img src={this.props.picture} alt="park picture" className="detailparkpic" />
 
-                        <h3>{this.props.name}</h3>
+                        <h3 id="parkName">{this.props.name}</h3>
                         <div><ParkAddress address={parkAddress}/></div>
                         <ParkRating /> 
                         <ul id="ameneties-list">
@@ -105,8 +111,10 @@
                         <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
                     </form>
                     <div>
-                        {/* <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
-                        <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." /> */}
+                        <ParkComments
+                        name={this.props.name} 
+                        userImage={this.props.userImage}
+                        commentID={this.props.uid} />
                     </div>
                 </div>
             );

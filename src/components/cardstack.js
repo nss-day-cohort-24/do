@@ -76,7 +76,7 @@ class Cardstack extends Component {
             }
             return(
                 <div className="d-flex flex-column">
-                    <ParkDetails picture={picture} allInfo={this.props.info} name={this.props.name} location={this.props.location} details={this.state.details} viewCard={this.viewCard} type={this.props.type} uid={this.props.user.uid}/>
+                    <ParkDetails picture={picture} allInfo={this.props.info} name={this.props.name} location={this.props.location} details={this.state.details} viewCard={this.viewCard} type={this.props.type} uid={this.props.user.uid} userImage={this.props.user.photoURL}/>
                 </div>
             )
         } else if (this.state.profile){
@@ -99,7 +99,7 @@ class Cardstack extends Component {
                     <div className="parkcard">
                         <img src={picture} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
-                        <h3 className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
+                        <h3 id="parkName" className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
                         <div className='fixed-bottom pb-4 pl-3'>
