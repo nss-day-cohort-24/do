@@ -1,13 +1,5 @@
 import { googleProvider, rebase }  from './base';
 
-// export function auth (email, pw) {
-//     return rebase.initializedApp.auth().createUserWithEmailAndPassword(email, pw)
-//       .then((data) => {
-//         console.log("data is", data);
-//         saveUser(data);
-//       })
-//   }
-
   export function logout () {
     return rebase.initializedApp.auth().signOut()
   }
@@ -47,32 +39,3 @@ import { googleProvider, rebase }  from './base';
             return user;
           })
       }
-
-  export function SaveObjToFB (endpoint, objToSave) { //object  {}, endPoint "endPoint" example: for users endpoint type "users"
-    console.log("object to save:", objToSave);
-    return rebase.post(endpoint, {
-      data: objToSave, 
-        then(err) {
-          if(err) {
-            console.log("this is a scary error", err);
-          } else if (!err) {
-            console.log("error free, baby!");
-            console.log(objToSave);
-          }
-        }
-      })
-      .then((result) => {
-        console.log("saved something to firebase and this was the result:", result);
-        return result;
-      })
-  }
-
-  export function DeleteFromFB (endpoint, itemID) { //example "users" endpoint and itemID of specific user "userid"
-    return rebase.remove(endpoint + "/" + itemID, function(err){
-      if(err){
-        console.log("this is a scary error", err);
-    } else if (!err) {
-      console.log("deleted item successfully");
-    }
-    })
-  }

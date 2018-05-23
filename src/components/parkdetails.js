@@ -80,15 +80,6 @@
         };
     };
 
-    // class ParkDetail extends Component{
-
-    //     render() {
-    //         return (
-    //             <li>{this.props.detail}</li>
-    //         );
-    //     };
-    // };
-
     class Comment extends Component {
         render () {
             return (
