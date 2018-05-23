@@ -56,7 +56,8 @@ class Cardstack extends Component {
         console.log("data log function launched");
         console.log(this.props.location);
         let allLocationInfo = this.props.info;
-        console.log(allLocationInfo);
+        console.log("this.props.info", this.props.info);
+        console.log("allLocationInfo", allLocationInfo);
     }
 
 
