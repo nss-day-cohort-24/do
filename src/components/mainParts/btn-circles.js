@@ -20,7 +20,7 @@ class CircleButtons extends Component {
 
     favoriteAPlace(){
 
-        type = this.props.dataType;
+        type = this.props.type;
         user = this.props.user.uid;
         poi = this.props.parkname;
 
