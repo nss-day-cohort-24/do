@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import TopNav from './mainParts/top-nav.js';
 import CircleButtons from './mainParts/btn-circles';
-import ParkName from './parkParts/park-name';
+// import ParkName from './parkParts/park-name';
 import ParkRating from './parkParts/park-rating';
 import ParkPic from './parkParts/park1.jpg';
 import './cardstack.css';
@@ -55,7 +55,7 @@ class Cardstack extends Component {
     returnInfo(){
         // console.log("data log function launched");
         // console.log(this.props.location);
-        let allLocationInfo = this.props.info;
+        // let allLocationInfo = this.props.info;
         // console.log("this.props.info", this.props.info);
         // console.log("allLocationInfo", allLocationInfo);
     }
@@ -97,7 +97,7 @@ class Cardstack extends Component {
                 <div className="d-flex flex-column">
                     <TopNav user={this.props.user} viewProfile={this.viewProfile} />
                     <div className="parkcard">
-                        <img src={picture} alt="park picture" className="parkpic border-top-0 rounded" onClick={() => this.setState({ details: true })} />
+                        <img src={picture} alt="park" className="parkpic border-top-0 rounded" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
                         <h3 id="parkName" className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>

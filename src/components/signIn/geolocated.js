@@ -68,7 +68,7 @@ class Demo extends React.Component {
             :  
             <div>
                 <p className="text-center">Finding your location...</p>  
-                <img className="img-thumbnail border-0" src={gif} />
+                <img className="img-thumbnail border-0" src={gif} alt="" />
             </div>
     }
 }

@@ -32,8 +32,6 @@ import { googleProvider, rebase }  from './base';
             name: user.displayName,
             portrait: user.photoURL,
             uid: user.uid,
-            name: user.displayName,
-            portrait:user.photoURL
           })
           .then(() => {
             return user;

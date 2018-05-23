@@ -1,12 +1,8 @@
     //includes internal-local components for comments and the add icon
     import React, { Component } from 'react';
-    import ReactDOM from 'react-dom';
     import './parkdetails.css';
-    import App from'../App';
     import ParkRating from './parkParts/park-rating';
-    import ParkPic from './parkParts/park1.jpg';
     import ParkAddress from './parkParts/park-address';
-    import CardStack from './cardstack';
     import { SaveObjToFB } from './dbInteraction/FB-function';
     import ParkComments from './parkComments';
 
