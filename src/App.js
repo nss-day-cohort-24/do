@@ -5,13 +5,7 @@ import Signin from './components/signIn/signIn';
 import ParkDetails from './components/parkdetails';
 import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
-import Hammer from 'hammerjs';
 import Geolocated from './components/signIn/geolocated';
-import { SaveObjToFB } from './components/dbInteraction/auth';
-
-const fakeObj = {name: "amber", last: "sharpe"};
-
-SaveObjToFB('commentTEST', fakeObj);
 
 
 var name = "Potters Field";
@@ -39,57 +33,39 @@ var artAPI =
 
 class App extends Component {
 
-
   constructor(props){
 
     super(props)
     this.state={
-      pickedAnAPI: false,
+      openData: false,
       apiNumber: '',
       swiped: false,
       authed: false,
     }
-
-    // this.logSwipe = this.logSwipe.bind(this);
-    this.getAnAPI = this.getAnAPI.bind(this);
-    this.swipeAnAPI = this.swipeAnAPI.bind(this);
     this.changeAuth = this.changeAuth.bind(this);
     this.logoutApp = this.logoutApp.bind(this);
+    this.reRenderOpenData = this.reRenderOpenData.bind(this);
 
-    this.hammer = new Hammer(document.body, {preventDefault: true});
-    this.hammer.on('swipe', this.swipeAnAPI);
+
   }
 
-  swipeAnAPI(){
-    this.setState({pickedAnAPI: false});
-    this.getAnAPI();
-  }
-
-  getAnAPI(){
-    this.setState({
-      apiNumber: Math.floor(Math.random() * 3),
-      pickedAnAPI: true
-    })
+  reRenderOpenData(boo){
+    this.setState({openData: boo})
   }
 
   changeAuth(user){
     this.setState({
       authed: true,
       user: user,
-      pickedAnAPI: true
+      openData: true
     })
   }
 
   logoutApp(){
     this.setState({
       authed: false,
-      // user: user,
-      // pickedAnAPI: true
-    })
-  }
 
-  componentDidMount(){
-    this.getAnAPI();
+    })
   }
 
   render() {    
@@ -98,9 +74,10 @@ class App extends Component {
         <Signin  changeAuth={this.changeAuth}/>
       );
     }
-    else if (this.state.authed && this.state.pickedAnAPI) {
+    else if (this.state.authed && this.state.openData) {
+      console.log('trying to render nashvilleopendata component');
       return(
-        <NashvilleOpenData api={this.state.apiNumber} user={this.state.user} logoutApp={this.logoutApp} />
+        <NashvilleOpenData reRenderOpenData={this.reRenderOpenData} user={this.state.user} logoutApp={this.logoutApp}/>
       )
     }else{
       return(

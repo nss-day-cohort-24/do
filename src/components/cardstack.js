@@ -9,6 +9,7 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
+import Map from './map.js';
 
 var picture;
 
@@ -22,6 +23,9 @@ class Cardstack extends Component {
         this.toTitleCase = this.toTitleCase.bind(this);
         this.viewProfile = this.viewProfile.bind(this);
         this.viewCard = this.viewCard.bind(this);
+        this.returnInfo = this.returnInfo.bind(this);
+        this.viewMap = this.viewMap.bind(this);
+
     }
 
     toTitleCase(str) {
@@ -38,23 +42,44 @@ class Cardstack extends Component {
         this.setState({
             details: false,
             profile: false,
+            map: false,
         })
     }
+
+    viewMap() {
+        this.setState({
+            map: true,
+        })
+    }
+
+    returnInfo(){
+        console.log("data log function launched");
+        console.log(this.props.location);
+        let allLocationInfo = this.props.info;
+        console.log(allLocationInfo);
+    }
+
 
     render() {
         console.log('what is this?', this.props)
         console.log("cardstack name props", this.props.name);
         console.log("this.props.type", this.props.type);
+        this.returnInfo()
+
         
         if (this.state.details) {
             return(
                 <div className="d-flex flex-column">
-                    <ParkDetails details={this.state.details} viewCard={this.viewCard}/>
+                    <ParkDetails allInfo={this.props.info} name={this.props.name} location={this.props.location} details={this.state.details} viewCard={this.viewCard} type={this.props.type}/>
                 </div>
             )
         } else if (this.state.profile){
             return (
             <Profile user={this.props.user} viewCard={this.viewCard} logoutApp={this.props.logoutApp}/>
+            )
+        } else if(this.state.map){
+            return (
+                <Map viewCard={this.viewCard} />
             )
         } else {
             if(this.props.type === 'art'){
@@ -72,7 +97,7 @@ class Cardstack extends Component {
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
                         <div className='fixed-bottom pb-4 pl-3'>
-                            <CircleButtons />
+                            <CircleButtons viewMap={this.viewMap} apiAppFunction={this.props.apiAppFunction} openDataApiFunction={this.props.openDataApiFunction} apiNumber={this.props.apiNumber} user={this.props.user} parkname={this.props.name}/>
                         </div>
                     </div>
                 </div>
