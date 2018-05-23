@@ -76,7 +76,7 @@ class App extends Component {
       );
     }
     else if (this.state.authed && this.state.openData) {
-      console.log('trying to render nashvilleopendata component');
+      // console.log('trying to render nashvilleopendata component');
       return(
         <NashvilleOpenData reRenderOpenData={this.reRenderOpenData} user={this.state.user} logoutApp={this.logoutApp}/>
       )

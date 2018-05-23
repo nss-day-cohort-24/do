@@ -36,7 +36,7 @@ class CircleButtons extends Component {
             type: type
         }
 
-        console.log('trying to favorite a place', user, poi,type);
+        // console.log('trying to favorite a place', user, poi,type);
         SaveObjToFB("favorites", FBObj);
 
         newPoi();

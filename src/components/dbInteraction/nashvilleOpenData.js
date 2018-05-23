@@ -26,7 +26,7 @@ class NashvilleOpenData extends Component {
 }
 
 logSwipe(event){
-  console.log(event);
+  // console.log(event);
 }
 
 // function that takes API url and dataType 
@@ -60,14 +60,14 @@ logSwipe(event){
   }
 
   renderData(data, type){
-     console.log('lastLocation length', lastLocation.length);
+    //  console.log('lastLocation length', lastLocation.length);
     if(lastLocation.length <= 1){
       var location = {
         info: data,
         type: type
       }
       lastLocation.push(location);
-      console.log('last location array push', lastLocation);
+      // console.log('last location array push', lastLocation);
     }else if(lastLocation.length === 2){
       lastLocation.splice(0,1);
       var location = {
@@ -75,7 +75,7 @@ logSwipe(event){
         type: type
       }
       lastLocation.push(location);
-      console.log('last location array splice', lastLocation);
+      // console.log('last location array splice', lastLocation);
     }
     this.setState({data: data, dataLoaded: true, dataType: type})
   }
@@ -91,14 +91,14 @@ logSwipe(event){
     }
     lastLocation.splice(0,1);
     lastLocation.push(location);
-    console.log('last location array length', lastLocation.length);
-    console.log('last location array', lastLocation);
+    // console.log('last location array length', lastLocation.length);
+    // console.log('last location array', lastLocation);
     this.setState({data: info, dataLoaded: true, dataType: type });
     }
   }
 
   componentDidMount(){
-    console.log('nashville open data mounted');
+    // console.log('nashville open data mounted');
     this.pickAUrlAndCallAPI();
   }
   
@@ -113,7 +113,7 @@ if(this.state.dataLoaded  && this.state.dataType === 'parks'){
 
 // print art
 }else if(this.state.dataLoaded && this.state.dataType === 'art'){
-  var dataStuff = this.state.data;
+  var dataStuff = this.state.data; 
   return (<CardStack showLast={this.showLast} newPoi={this.pickAUrlAndCallAPI} picture ={dataStuff[0].photo_link} info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location}/>)
 
 //print history
