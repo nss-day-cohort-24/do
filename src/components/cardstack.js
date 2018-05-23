@@ -98,7 +98,7 @@ class Cardstack extends Component {
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
                         <div className='fixed-bottom pb-4 pl-3'>
-                            <CircleButtons dataType={this.props.dataType} user={this.props.user} parkname={this.props.name}/>
+                            <CircleButtons viewMap={this.viewMap} type={this.props.type} user={this.props.user} parkname={this.props.name}/>
                         </div>
                     </div>
                 </div>

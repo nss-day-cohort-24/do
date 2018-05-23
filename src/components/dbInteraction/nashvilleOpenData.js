@@ -86,7 +86,7 @@ if(this.state.dataLoaded  && this.state.dataType === 'parks'){
   console.log("art api");
   var dataStuff = this.state.data;
   console.log("art data", dataStuff);
-  return (<CardStack  info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location}/>)
+  return (<CardStack  picture ={dataStuff[0].photo_link} info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location}/>)
 
 //print history
 }else if(this.state.dataLoaded && this.state.dataType === 'history'){
