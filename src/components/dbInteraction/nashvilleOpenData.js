@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import CardStack from '../cardstack'; 
+import Hammer from 'hammerjs';
 
 var name = "Potters Field";
 //test string for querying database
 var query = `?$where=park_name="${name}"`
-    // this.hammer = new Hammer(document.body, {preventDefault: true});
-    // this.hammer.on('swipe', this.swipeAnAPI);
+
 
 class NashvilleOpenData extends Component {
 
@@ -17,6 +17,14 @@ class NashvilleOpenData extends Component {
       dataType: []
     }
     this.renderData = this.renderData.bind(this);
+    this.hammer = new Hammer(document.body, {preventDefault: true});
+    this.logSwipe = this.logSwipe.bind(this);
+    this.pickAUrlAndCallAPI = this.pickAUrlAndCallAPI.bind(this);
+    this.hammer.on('swipe', this.pickAUrlAndCallAPI);
+}
+
+logSwipe(event){
+  console.log(event);
 }
 
 // function that takes API url and dataType 
