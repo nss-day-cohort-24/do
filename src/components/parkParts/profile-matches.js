@@ -11,7 +11,7 @@ export class FavePark extends React.Component {
         return (
             <div>
                 <div className="favePark">
-                    <h3 className="pt-2 pr-2 pl-2">{this.props.name}</h3>
+                    {/* <h3 className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3> */}
                     <p><ParkAddress address="Test address"/></p>
                     <ParkRating /> 
                 </div>
