@@ -1,14 +1,15 @@
 .parkpic {
-    height: 300px;
-    width: 300px;
-    border-top-left-radius: 15%;
-    border-top-right-radius: 15%;
+    /* height: 300px;
+    width: 300px; */
+    height: 50vh;
+    width: 100vw;
+    border-radius: 7.5%;
 }
 
 .parkcard {
-    border: 1px solid #f1f1f1;
-    border-radius: 15%;
-    height: 415px;
-    width: 300px;
-    margin: 16px;
+    /* border-radius: 15%; */
+    height: 50vh;
+    width: 100vw;
+    margin: 0;
+    /* margin: 16px; */
 }

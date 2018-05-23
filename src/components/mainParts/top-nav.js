@@ -11,7 +11,7 @@ class TopNav extends Component {
 
         return(
             <React.Fragment>
-                <div className="d-flex justify-content-between">
+                <div className="d-flex justify-content-between ml-4">
                     <img className="top-nav-logo" src={logo} alt="do logo"/>
                     <div className="top-nav-user-img mr-4">
                         <img className="img-thumbnail" src={profileImg} alt="user image" onClick={this.props.viewProfile}/>

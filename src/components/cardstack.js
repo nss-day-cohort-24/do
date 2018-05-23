@@ -94,10 +94,10 @@ class Cardstack extends Component {
                 picture = ParkPic;
             }
             return (
-                <div className="d-flex flex-column ml-4">
+                <div className="d-flex flex-column">
                     <TopNav user={this.props.user} viewProfile={this.viewProfile} />
                     <div className="parkcard">
-                        <img src={picture} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
+                        <img src={picture} alt="park picture" className="parkpic border-top-0 rounded" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
                         <h3 id="parkName" className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
