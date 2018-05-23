@@ -21,7 +21,7 @@ class ParkComments extends React.Component {
                 if(data[item].parkName === name) {
                     return( 
                         <div key={index} className="d-flex flex-row border-bottom bg-light">
-                            <div className="col-8 align-self-center py-2" id={this.props.commentID}>
+                            <div className="align-self-center py-2" id={this.props.commentID}>
                                 <p>{data[item].commentString}</p>
                             </div>
                         </div>
