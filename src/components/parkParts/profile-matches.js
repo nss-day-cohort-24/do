@@ -1,7 +1,7 @@
 import React from 'react';
 import ParkRating from './park-rating';
 import ParkAddress from './park-address';
-import {DeleteFromFB} from '../dbInteraction/auth';
+import {DeleteFromFB} from '../dbInteraction/FB-function';
 
 export class FavePark extends React.Component {
  

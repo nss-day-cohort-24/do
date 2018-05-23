@@ -1,6 +1,6 @@
 import React from 'react';
 import rebase from './base';
-import { SaveObjToFB } from './auth';
+import { SaveObjToFB } from './FB-function';
 
 export default class  SaveComment extends React.Component {
   render() {
