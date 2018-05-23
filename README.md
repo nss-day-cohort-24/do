@@ -23,7 +23,7 @@ the locator.
 ![logo placeholder](ReadmeFiles/1.png "Logo placeholder")
 <br />
 <br />
-![Final Prototype](ReadmeFiles/dosmaller.gif)
+![Final Prototype](ReadmeFiles/do.gif)
 the final.
 
 # MVP goals.
