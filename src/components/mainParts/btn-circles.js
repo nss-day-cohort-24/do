@@ -4,41 +4,40 @@ import heart from '../images/heart.svg';
 import arrow from '../images/undo-alt.svg';
 import marker from '../images/btn-map-marker.svg';
 import './btn-circles.css';
-// import { SaveObjToFB  } from '../dbInteraction/auth';
+import { SaveObjToFB  } from '../dbInteraction/FB-function';
 
+
+var user, poi, type;
 
 class CircleButtons extends Component {
 
-    greenHeartButton(user, parkname) {
-        console.log(user, parkname);
-        // push uid, park name to firebase 
-        // calls the next random api   
+    constructor(props){
+        super(props)
+
+        this.favoriteAPlace = this.favoriteAPlace.bind(this);
     }
-    
-    redExButton() {
-        // calls the next random api
+
+
+    favoriteAPlace(){
+
+        type = this.props.dataType;
+        user = this.props.user.uid;
+        poi = this.props.parkname;
+
+        var FBObj = {
+            userUID : user,
+            poi : poi,
+            type: type
+        }
+
+        console.log('trying to favorite a place', user, poi,type);
+        SaveObjToFB("favorites", FBObj);
     }
+
+
 
     render() {
-
-    const userUID = this.props.user.uid;
-    const parkname = this.props.parkname;
-    console.log("circle-userUID", userUID);
-    console.log("park-name", parkname);
-
-    const parkObj = {
-        userUID: userUID,
-        parkname: parkname
-    }
-    console.log(parkObj)
-
-    // SaveObjToFB('matches', parkObj);
-
-    function clickOnHeartButton(fbFunction) {
-
- 
-    }
-
+    
         return (
             <div className="d-flex">
                 <div>
@@ -53,7 +52,7 @@ class CircleButtons extends Component {
                 </div>
                 <div>
                     <button className="largeCircleButton">
-                        <img src={heart} alt="green heart"/>
+                        <img onClick={this.favoriteAPlace} src={heart} alt="green heart"/>
                     </button>
                 </div>
                 <div>

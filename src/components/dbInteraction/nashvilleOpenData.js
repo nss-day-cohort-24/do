@@ -72,6 +72,7 @@ if(this.state.dataLoaded  && this.state.dataType === 'parks'){
   console.log("parks data", dataStuff);
     return (<CardStack  info={dataStuff} name={dataStuff[0].park_name} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].mapped_location_address}/>)
 
+
 // print art
 }else if(this.state.dataLoaded && this.state.dataType === 'art'){
   console.log("art api");
@@ -90,6 +91,7 @@ if(this.state.dataLoaded  && this.state.dataType === 'parks'){
       <div>
         Loading....
       </div>
+
         )
       }
 }
