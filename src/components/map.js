@@ -1,5 +1,4 @@
 import './profile.css';
-import { logout } from './dbInteraction/auth';
 import Geolocated from './signIn/geolocated';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
