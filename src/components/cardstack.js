@@ -94,7 +94,7 @@ class Cardstack extends Component {
                     <div className="parkcard">
                         <img src={picture} alt="park picture" className="parkpic" onClick={() => this.setState({ details: true })} />
                         {/* <ParkName name={this.props.name} /> */}
-                        <h3 className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
+                        <h3 id="parkName" className="pt-2 pr-2 pl-2">{this.toTitleCase(this.props.name)}</h3>
                         <h2 className="pl-4">{this.props.type.charAt(0).toUpperCase() + this.props.type.substr(1).toLowerCase()}</h2>
                         <ParkRating />
                         <div className='fixed-bottom pb-4 pl-3'>

@@ -8,6 +8,12 @@
     import ParkAddress from './parkParts/park-address';
     import CardStack from './cardstack';
     import { SaveObjToFB } from './dbInteraction/FB-function';
+    import ParkComments from './parkComments';
+
+
+
+
+
     class ParkDetails extends Component {
        
         constructor(props) {
@@ -20,16 +26,16 @@
         }
 
         handleSubmit = (event) => {
-            console.log('uid props:', this.props.uid);
+            // console.log('uid props:', this.props.uid);
             this.CommentToSave(this.props.uid, this.props.name, this.state.value);
-            console.log('A comment was gotten:' + this.state.value);
+            // console.log('A comment was gotten:' + this.state.value);
             event.preventDefault();
         }
 
         
 
        CommentToSave = (uid, parkName, commentText) => {
-           console.log('uid to save', uid);
+        //    console.log('uid to save', uid);
            const commentObj = {
             userID : uid,
             parkName : parkName,
@@ -68,7 +74,7 @@
                 }
 
                 // Converts the ameneties in the 'ameneties' array into JSX list elements.
-                listedAmeneties = ameneties.map(x => <li>{x}</li>);
+                listedAmeneties = ameneties.map(x => <li key={x}>{x}</li>);
                 console.log('listedAmeneties',listedAmeneties);
 
 
@@ -85,7 +91,7 @@
 
                             <img src={ParkPic} alt="park picture" className="detailparkpic" />
 
-                        <h3>{this.props.name}</h3>
+                        <h3 id="parkName">{this.props.name}</h3>
                         <div><ParkAddress address={parkAddress}/></div>
                         <ParkRating /> 
                         <ul id="ameneties-list">
@@ -95,11 +101,10 @@
                     <form onSubmit={this.handleSubmit}>
                         <label htmlFor="Textarea1">Make a Comment</label>
                         <textarea className="form-control" id="Textarea1" rows="3" value={this.state.value} onChange={this.handleChange}></textarea>
-                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                        <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
                     </form>
                     <div>
-                        <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />
-                        <Comment userImage="#" commentID="002"  commentText="I go here everday to stalk the pretty dogs and plot how to pet them." />
+                        <ParkComments />
                     </div>
                 </div>
             );
