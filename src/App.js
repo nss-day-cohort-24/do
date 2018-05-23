@@ -68,7 +68,8 @@ class App extends Component {
     })
   }
 
-  render() {    
+  render() {
+   
     if (!this.state.authed) {
       return(
         <Signin  changeAuth={this.changeAuth}/>
