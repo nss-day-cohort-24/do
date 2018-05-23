@@ -7,14 +7,37 @@
     import ParkPic from './parkParts/park1.jpg';
     import ParkAddress from './parkParts/park-address';
     import CardStack from './cardstack';
-    import SaveComment from './dbInteraction/FB-comments'
-
-    const CommentToSave = (uid, parkName, commentString) => {
-        return <SaveComment uid={uid} parkName={parkName} commentText={commentString} />
-    }
+    import { SaveObjToFB } from './dbInteraction/FB-function';
     class ParkDetails extends Component {
+       
+        constructor(props) {
+            super(props);
+            this.state = {value: ''};
+        }
+
+        handleChange= (event) => {
+            this.setState({value: event.target.value});
+        }
+
+        handleSubmit = (event) => {
+            console.log('uid props:', this.props.uid);
+            this.CommentToSave(this.props.uid, this.props.name, this.state.value);
+            console.log('A comment was gotten:' + this.state.value);
+            event.preventDefault();
+        }
 
         
+
+       CommentToSave = (uid, parkName, commentText) => {
+           console.log('uid to save', uid);
+           const commentObj = {
+            userID : uid,
+            parkName : parkName,
+            commentString : commentText
+          };
+            SaveObjToFB('comments', commentObj)
+        }
+
         render() {
             const parkAddress = this.props.location;
             const allInfo = this.props.allInfo;
@@ -25,7 +48,7 @@
             console.log("all info", allInfo);
 
             // Checks to see if the data type is a park (parks are the only datasets with ameneties listed)
-            if(type === "park" || "parks") {
+            if(type === "park" || "parks") { 
                 console.log("its a park");
                 console.log("list park ameneties: ", allInfo[0])
                 for(let key in allInfo[0]) {
@@ -69,10 +92,10 @@
                             {listedAmeneties}
                         </ul>
                     </div>
-                    <form>
-                        <label for="Textarea1">Make a Comment</label>
-                        <textarea class="form-control" id="Textarea1" rows="3"></textarea>
-                        <button type="button" class="btn btn-primary" onClick={CommentToSave(this.props.uid, this.props.name, document.getElementById('Textarea1').value )}>Submit</button>
+                    <form onSubmit={this.handleSubmit}>
+                        <label htmlFor="Textarea1">Make a Comment</label>
+                        <textarea className="form-control" id="Textarea1" rows="3" value={this.state.value} onChange={this.handleChange}></textarea>
+                        <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
                     </form>
                     <div>
                         <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />

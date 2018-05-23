@@ -7,8 +7,6 @@ import Cardstack from './components/cardstack';
 import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 import Geolocated from './components/signIn/geolocated';
 
-import SaveComment from './components/dbInteraction/FB-comments';
-
 
 var name = "Potters Field";
 //test string for querying database
