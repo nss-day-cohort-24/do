@@ -35,14 +35,15 @@ the final.
 1. On details page the user can leave a comment about the location
 1. From card view, the user can "match" with data and save it to associate with their user data - then next POI shows
 1. User can pass on data and next POI shows
-1. User can swipe to quickly pass through cards
+1. User can swipe to quickly pass through card
+1. Return to last card button functionality
 1. User can view a profile to see their Google user image, set their radius, and view their matches
 
 # stretch goals.
 1. Include Google Maps API to show location of POI on maps
 1. When set in profile, the user can select to only see matches in ~1 mile, ~5 miles, ~10 miles
-1. Return to last card button functionality
 1. Images for parks and history, most ideally supported by Nashville Open Data API
+1. Star rating ability for POI
 1. User feedback for matches added 
 1. User feedback for comments added
 
