@@ -9,6 +9,9 @@
     import CardStack from './cardstack';
     import SaveComment from './dbInteraction/FB-comments'
 
+    const CommentToSave = (uid, parkName, commentString) => {
+        return <SaveComment uid={uid} parkName={parkName} commentText={commentString} />
+    }
     class ParkDetails extends Component {
 
         
@@ -69,7 +72,7 @@
                     <form>
                         <label for="Textarea1">Make a Comment</label>
                         <textarea class="form-control" id="Textarea1" rows="3"></textarea>
-                        <button type="button" class="btn btn-primary" onClick={SaveComment}>Submit</button>
+                        <button type="button" class="btn btn-primary" onClick={CommentToSave(this.props.uid, this.props.name, document.getElementById('Textarea1').value )}>Submit</button>
                     </form>
                     <div>
                         <Comment userImage="#" commentID="001"  commentText="I love this park so much I'm going to diiiiieeeee!!" />

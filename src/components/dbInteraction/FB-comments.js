@@ -2,7 +2,7 @@ import React from 'react';
 import rebase from './base';
 import { SaveObjToFB } from './FB-function';
 
-export default class  SaveComment extends React.Component {
+export default class SaveComment extends React.Component {
   render() {
 
     const commentObj = {
@@ -11,9 +11,11 @@ export default class  SaveComment extends React.Component {
       commentString : this.props.commentText
     };
 
+    console.log("we are saving this comment:", commentObj);
+
     return (
+      console.log('userid', this.props.uid),
       console.log('The save comment button has been clicked'),
-      console.log('commentObj'),
       SaveObjToFB('comments', commentObj)
     );
 
