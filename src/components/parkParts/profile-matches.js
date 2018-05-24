@@ -6,7 +6,6 @@ import {DeleteFromFB} from '../dbInteraction/FB-function';
 export class FavePark extends React.Component {
     
     render() {
-        console.log('A new fave park was added');
         const parkid = this.props.parkName;
         // let address = this.props.address;
         let userid = this.props.uid;
@@ -19,7 +18,7 @@ export class FavePark extends React.Component {
                     <ParkRating /> 
                 </div>
                 <div>
-                    <img src="#" onClick={deleteComment(parkid, userid)} alt=""/>
+                    {/* <img src="#" onClick={deleteComment(parkid, userid)} alt=""/> */}
                 </div>
             </div>
         )

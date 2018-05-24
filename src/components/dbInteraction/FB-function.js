@@ -36,7 +36,6 @@ import { rebase }  from './base';
       asArray: true, 
       then(data) {
         let myObj = JSON.stringify(data);
-        console.log('Has data?',  myObj);
         return myObj;
       }
 
