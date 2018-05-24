@@ -20,6 +20,7 @@ class Profile extends React.Component {
         };
     }
 
+    // making this call before render
     componentWillMount() {
         GetFromFB('favorites').then(res => {
             this.setState({matches: res});
