@@ -6,7 +6,7 @@ import userCircle from '../images/user-circle.svg';
 class TopNav extends Component {
     render() {
         const user = this.props.user.providerData[0]; 
-        const name = user.displayName;
+        // const name = user.displayName;
         const profileImg = user.photoURL ? user.photoURL : userCircle;
 
         return(
@@ -14,7 +14,7 @@ class TopNav extends Component {
                 <div className="d-flex justify-content-between ml-4">
                     <img className="top-nav-logo" src={logo} alt="do logo"/>
                     <div className="top-nav-user-img mr-4">
-                        <img className="img-thumbnail" src={profileImg} alt="user image" onClick={this.props.viewProfile}/>
+                        <img className="img-thumbnail" src={profileImg} alt="user" onClick={this.props.viewProfile}/>
                     </div>
                 </div>
             </React.Fragment>

@@ -8,27 +8,6 @@ import NashvilleOpenData from './components/dbInteraction/nashvilleOpenData';
 // import Geolocated from './components/signIn/geolocated';
 
 
-// var name = "Potters Field";
-//test string for querying database
-// var query = `?$where=park_name="${name}"`
-
-// var parksAPI = 
-// {
-//   link:`https://data.nashville.gov/resource/xbru-cfzi.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-//   type: 'parks'
-// }
-
-// var historyAPI = 
-// {
-//   link:`https://data.nashville.gov/resource/xakp-ess3.json?$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-//   type: 'history'
-// };
-
-// var artAPI = 
-// {
-//   link: `https://data.nashville.gov/resource/xakp-ess3.json$limit=1&$offset=${Math.floor(Math.random()* 100)}`,
-//   type: 'art'
-// };
 
 
 class App extends Component {
@@ -72,13 +51,19 @@ class App extends Component {
    
     if (!this.state.authed) {
       return(
+        <div>
         <Signin  changeAuth={this.changeAuth}/>
+        {console.log('sign in component ')}
+        </div>
       );
     }
     else if (this.state.authed && this.state.openData) {
       // console.log('trying to render nashvilleopendata component');
       return(
+        <div>
         <NashvilleOpenData reRenderOpenData={this.reRenderOpenData} user={this.state.user} logoutApp={this.logoutApp}/>
+        {console.log("open data component", this.state.authed, this.state.openData)}
+        </div>
       )
     }else{
       return(

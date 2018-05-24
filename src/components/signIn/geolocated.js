@@ -11,7 +11,7 @@ class Demo extends React.Component {
             lat:'',
             long: '',
             time:false,
-            locations: {}
+            locations: []
         }
     }
     
@@ -44,9 +44,9 @@ class Demo extends React.Component {
         .then(data => data.json())
         .then((data) => {
                 data.map((item, index) => {
-                    this.state.locations[item.park_name] = {latitude: Number(item.mapped_location.coordinates[1]), longitude: Number(item.mapped_location.coordinates[0])}  
+                        this.state.locations[item.park_name] = {latitude: Number(item.mapped_location.coordinates[1]), longitude: Number(item.mapped_location.coordinates[0])}  
                     })  
-        })
+                })
         
     }
 
