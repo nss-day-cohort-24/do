@@ -9,7 +9,7 @@ import './cardstack.css';
 import './parkParts/park-parts.css';
 import ParkDetails from './parkdetails.js';
 import Profile from './profile.js';
-import Map from './map.js';
+import MapContainer from './map.js';
 
 var picture;
 
@@ -85,7 +85,7 @@ class Cardstack extends Component {
             )
         } else if(this.state.map){
             return (
-                <Map viewCard={this.viewCard} />
+                <MapContainer viewCard={this.viewCard} />
             )
         } else {
             if(this.props.type === 'art' && this.props.picture){
