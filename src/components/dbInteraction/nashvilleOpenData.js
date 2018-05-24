@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import CardStack from '../cardstack'; 
 import Hammer from 'hammerjs';
-import CardStack from '../cardstack.js';
 
 // var name = "Potters Field";
 //test string for querying database
@@ -17,10 +17,10 @@ class NashvilleOpenData extends Component {
       dataLoaded: false,
       dataType: []
     }
-    this.pickAUrlAndCallAPI = this.pickAUrlAndCallAPI.bind(this);
     this.renderData = this.renderData.bind(this);
     this.hammer = new Hammer(document.body, {preventDefault: true});
     this.logSwipe = this.logSwipe.bind(this);
+    this.pickAUrlAndCallAPI = this.pickAUrlAndCallAPI.bind(this);
     this.showLast = this.showLast.bind(this);
     this.hammer.on('swipe', this.pickAUrlAndCallAPI);
 }
@@ -120,8 +120,7 @@ if(this.state.dataLoaded  && this.state.dataType === 'parks'){
 }else if(this.state.dataLoaded && this.state.dataType === 'history'){
    dataStuff = this.state.data;
   return (<CardStack  showLast={this.showLast} newPoi={this.pickAUrlAndCallAPI} info={dataStuff} name={dataStuff[0].title} type={this.state.dataType} user={this.props.user} logoutApp={this.props.logoutApp} location={dataStuff[0].location} />)
-}
-else if (!this.state.dataLoaded){
+}else if (!this.state.dataLoaded){
     return(
       <div>
         Loading....
