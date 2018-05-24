@@ -97,7 +97,7 @@ logSwipe(event){
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     // console.log('nashville open data mounted');
     this.pickAUrlAndCallAPI();
   }
