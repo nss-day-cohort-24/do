@@ -23,7 +23,8 @@ class Profile extends React.Component {
     // making this call before render
     componentWillMount() {
         GetFromFB('favorites').then(res => {
-            this.setState({matches: res});
+            const data = res.filter(i => i.userUID === this.props.user.uid);
+            this.setState({matches: data});
         })
     }
 
@@ -57,8 +58,8 @@ class Profile extends React.Component {
 
                 </div>
 
-                {matches.map((m, index) => {
-                    return <FavePark key={index} parkName={m.poi} address="The Address" uid={user.id} />
+                {matches.map((match, index) => {
+                    return <FavePark key={index} parkName={match.poi} address="The Address" uid={user.id} />
                 })}
             </div>
 
