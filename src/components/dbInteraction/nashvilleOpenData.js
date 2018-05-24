@@ -57,6 +57,8 @@ logSwipe(event){
             this.renderData(data, 'history');
           })   
           break;  
+          default: 
+          this.setState({dataLoaded: true, dataType : 'parks'});
   }
   }
 
