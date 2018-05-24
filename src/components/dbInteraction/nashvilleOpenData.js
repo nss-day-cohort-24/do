@@ -39,6 +39,7 @@ logSwipe(event){
           .then(data => data.json())
           .then((data) => {
             this.renderData(data, 'parks');
+            this.setState({data: data, dataLoaded: true, dataType: 'parks'})
           })
           break;
       case 1:
@@ -47,6 +48,7 @@ logSwipe(event){
           .then(data => data.json())
           .then((data) => {
             this.renderData(data, 'art');
+            this.setState({data: data, dataLoaded: true, dataType: 'art'})
           })
           break;
       case 2:
@@ -55,6 +57,7 @@ logSwipe(event){
           .then(data => data.json())
           .then((data) => {
             this.renderData(data, 'history');
+            this.setState({data: data, dataLoaded: true, dataType: 'history'})
           })   
           break;  
           
@@ -79,7 +82,7 @@ logSwipe(event){
       lastLocation.push(location);
       // console.log('last location array splice', lastLocation);
     }
-    this.setState({data: data, dataLoaded: true, dataType: type})
+    // this.setState({data: data, dataLoaded: true, dataType: type})
   }
 
   showLast(){
