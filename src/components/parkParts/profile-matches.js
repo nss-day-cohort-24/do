@@ -1,15 +1,15 @@
 import React from 'react';
 import ParkRating from './park-rating';
 import ParkAddress from './park-address';
-import {DeleteFromFB} from '../dbInteraction/FB-function';
+// import { DeleteFromFB } from '../dbInteraction/FB-function';
 
 export class FavePark extends React.Component {
     
     render() {
         const parkid = this.props.parkName;
         // let address = this.props.address;
-        let userid = this.props.uid;
-        let deleteComment = (parkname, uid) => { DeleteFromFB(parkname, uid)};
+        // let userid = this.props.uid;
+        // let deleteComment = (parkname, uid) => { DeleteFromFB(parkname, uid)};
         return (
             <div>
                 <div className="favePark">
@@ -25,11 +25,3 @@ export class FavePark extends React.Component {
     }
 }
 
-// class DeleteButton extends React.Component {
-//     render() {
-//         return (
-//         <div>
-//             <img src="#" onClick={DeleteFromFB(this.props.parkName, this.props.userid)} alt="parkpic"/>
-//         </div>
-//     )}
-// }

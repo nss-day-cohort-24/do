@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import CardStack from '../cardstack'; 
 import Hammer from 'hammerjs';
 
-var name = "Potters Field";
+// var name = "Potters Field";
 //test string for querying database
-var query = `?$where=park_name="${name}"`
+// var query = `?$where=park_name="${name}"`
 var lastLocation = [];
 
 
@@ -71,7 +71,7 @@ logSwipe(event){
       // console.log('last location array push', lastLocation);
     }else if(lastLocation.length === 2){
       lastLocation.splice(0,1);
-      var location = {
+        location = {
         info: data,
         type: type
       }
@@ -92,8 +92,6 @@ logSwipe(event){
     }
     lastLocation.splice(0,1);
     lastLocation.push(location);
-    // console.log('last location array length', lastLocation.length);
-    // console.log('last location array', lastLocation);
     this.setState({data: info, dataLoaded: true, dataType: type });
     }
   }
